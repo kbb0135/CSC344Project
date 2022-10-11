@@ -6,7 +6,7 @@
 }
 
 .navbar {
-    background: #131313;
+    background: #1C7914;
     height: 79px;
     display: flex;
     justify-content: center;
@@ -54,7 +54,7 @@
     height: 80px;
 }
 .navbar__links {
-    color: #ffb199;
+    color: #D2BEBE;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -181,7 +181,7 @@
 
 }
 .main {
-    background-color: rgb(229, 95, 95);
+    background-color: #ffffff
 }
 .main__container {
     display: grid;

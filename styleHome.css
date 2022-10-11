@@ -141,6 +141,10 @@
     .navbar__item {
         width:100%;
     }
+
+    .chapter_links {
+        text-align: center;
+    }
     .navbar__links {
         text-align: center;
         padding: 2rem;
@@ -181,6 +185,8 @@
 
 }
 
+
+
 .main{
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -193,4 +199,31 @@
     max-width:1300px;
     padding: 0 200px;
     
+}
+.chapter__container {
+    display: flex;
+    justify-content: space-between;
+    height: 90px;
+    z-index: 1; /* picture kei text overlap -1 xa bhaney display garxa */
+    width: 100%;  /* esle text sarxa*/
+    max-width: 1300px;
+    margin: 0 auto; /* else whole text sarxa*/
+    padding: 0 50 px;
+}
+.chapter__toggle .bar {
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background: #fff;
+}_
+.chapter__menu {
+    display: flex; /* vertical lai horizontal banauxa*/
+    align-items: center;
+    list-style: none;
+    text-align: center;
+}
+.chapter__links:hover {
+    color:#4be0cc;
+    transition: all 0.3s ease;
 }

@@ -14,7 +14,7 @@ body{
     align-items: center;
     justify-content: center;
     min-height : 100vh;
-    background: url(images/back2.jpg);
+    background: url(images/b.jpg);
 }
 
 .container{
@@ -82,7 +82,7 @@ body{
     visibility: hidden;
 }
 .form .button{
-    background:#12c12c;
+    background:#12c12cde;
     border-radius: 5px;
     border: none;
     outline: none;
@@ -99,4 +99,15 @@ body{
 .form .button:hover{
     background: #51dd90;
     cursor: pointer;
+}
+.askLogin {
+    color:#000;
+}
+.askLogin a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #aa2626d3
+}
+.askLogin a:hover {
+    color: #ffc107;
 }

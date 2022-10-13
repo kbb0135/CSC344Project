@@ -44,22 +44,35 @@ body{
 .form-control{
     margin-bottom: 30px; 
     position: relative;
-}
+  }
 
 .form-control label{
     display:inline-black;
     margin-bottom: 5px;
+ 
 }
 
 .form-control input: focus{
-    outline: 0;
-    border-color: #777;
+    outline: 5;
+    border-color: #777* ;
+    
 }
+
+.form-control input[type="text"]
+{
+    background: #d9d9d9;
+    height: 30px;
+    width:300px;
+}
+
 
 .form-contol.success input{
     border-color: #39df7e;
 }
 
+.form-contol.success input{
+    border-color: #df3434;
+}
 .form .button{
     background:#12c12c;
     border-radius: 5px;
@@ -77,4 +90,5 @@ body{
 
 .form .button:hover{
     background: #51dd90;
+    cursor: pointer;
 }

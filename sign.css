@@ -70,8 +70,15 @@ body{
     border-color: #39df7e;
 }
 
-.form-contol.success input{
+.form-contol.error input{
     border-color: #df3434;
+}
+
+.form-control i{
+    position: absolute;
+    right: 12px;
+    top:40px;
+    visibility: hidden;
 }
 .form .button{
     background:#12c12c;

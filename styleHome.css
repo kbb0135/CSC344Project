@@ -316,3 +316,6 @@
     border: 1px solid black;
     font-size: 17px;
   }
+  .main_img--container {
+    background-position-y: 90px;
+  }

@@ -22,32 +22,32 @@ crossorigin="anonymous" />
         <form action="" class="form" id="form">
             <div class="form-control"> 
                 <p>First Name</p>
-                <input type="text" name="" id="username" placeholder="Enter First Name" autocomplete="off">
-                <!-- <i class="fas fa-check-circle"></i>
+                <input type="text" name="" id="firstname" placeholder="Enter First Name" autocomplete="off">
+                <!--<i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
-                <small>Error Message</small> -->
+                <small>Error Message</small>-->
             </div>
         
             <div class="form-control"> 
                 <p>Last Name</p>
-                <input type="text" name="" id="username" placeholder="Enter Last Name" autocomplete="off">
-                <!-- <i class="fas fa-check-circle"></i>
+                <input type="text" name="" id="lastname" placeholder="Enter Last Name" autocomplete="off">
+                <!--<i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
-                <small>Error Message</small> -->
+                <small>Error Message</small>-->
             </div>
 
             <div class="form-control"> 
                 <p>Email</p>
-                <input type="text" name="" id="username" placeholder="Enter Email" autocomplete="off">
-                <!-- <i class="fas fa-check-circle"></i>
+                <input type="text" name="" id="email" placeholder="Enter Email" autocomplete="off">
+                <!--<i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
-                <small>Error Message</small> -->
+                <small>Error Message</small>-->
             
             </div>
             
             <div class="form-control"> 
                 <p>Password</p>
-                <input type="text" name="" id="username" placeholder="Enter Password" autocomplete="off">
+                <input type="password" name="" id="password" placeholder="Enter Password" autocomplete="off">
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
                 <small>Error Message</small>
@@ -55,20 +55,27 @@ crossorigin="anonymous" />
 
             <div class="form-control"> 
                 <p>Confirm Password</p>
-                <input type="text" name="" id="username" placeholder="Confirm Password" autocomplete="off">
+                <input type="password" name="" id="cpassword" placeholder="Confirm Password" autocomplete="off">
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
                 <small>Error Message</small>
             </div>
 
-            <input type="button" value="Sign Up" class="button">
+            <input type="button" value="Sign Up" class="button" onclick="signup()">
             
             <div class = "askLogin">
                 <p>Already a member?</p>
                 <a href="login.html">Login Here </a>
             </div>
+        
         </form>
     </div>
     
 </body>
+
+<script src ="https://www.gstatic.com/firebasejs/9.12.1/firebase-auth.js"></script>
+<script src ="https://www.gstatic.com/firebasejs/9.12.1/firebase-database.js"></script>
+
+<!-- js reference-->
+<script src="sign_databse.js"></script>
 </html>

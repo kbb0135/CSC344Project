@@ -5,6 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Nunito', sans-serif;
+   
 }
 
 body{
@@ -13,6 +14,7 @@ body{
     align-items: center;
     justify-content: center;
     min-height : 100vh;
+    background: url(images/b.jpg);
 }
 
 .container{
@@ -26,7 +28,7 @@ body{
 
 .header{
     background-color: #1c7914;
-    padding: 30 px 0;
+    padding: 11px;
     height: 50px;
 }
 
@@ -56,19 +58,26 @@ body{
  
 }
 
-.form-control input: focus{
+.form-control input:focus{
     outline: 5;
-    border-color: #777* ;
-    
+    border-color: #777 ;
 }
 
 .form-control input[type="text"]
 {
     background: #d9d9d9;
     height: 30px;
-    width:300px;
+    width: 300px;
+    border-radius: 5px;
 }
 
+.form-control input[type="password"]
+{
+    background: #d9d9d9;
+    height: 30px;
+    width: 300px;
+    border-radius: 5px;
+}
 
 .form-contol.success input{
     border-color: #39df7e;
@@ -100,6 +109,17 @@ body{
 }
 
 .form .button:hover{
-    background: #51dd90;
+    background:#ffc107;
     cursor: pointer;
+}
+.askLogin {
+    color:#000;
+}
+.askLogin a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #aa2626d3
+}
+.askLogin a:hover {
+    color: #ffc107;
 }

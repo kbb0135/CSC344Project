@@ -200,23 +200,6 @@
     padding: 0 200px;
     
 }
-.chapter__container {
-    display: flex;
-    justify-content: space-between;
-    height: 90px;
-    z-index: 1; /* picture kei text overlap -1 xa bhaney display garxa */
-    width: 100%;  /* esle text sarxa*/
-    max-width: 1300px;
-    margin: 0 auto; /* else whole text sarxa*/
-    padding: 0 50 px;
-}
-.chapter__toggle .bar {
-    width: 25px;
-    height: 3px;
-    margin: 5px auto;
-    transition: all 0.3s ease-in-out;
-    background: #fff;
-}_
 .chapter__menu {
     display: flex; /* vertical lai horizontal banauxa*/
     align-items: center;
@@ -227,3 +210,109 @@
     color:#4be0cc;
     transition: all 0.3s ease;
 }
+.Chapter_Content a{
+    text-decoration: none;
+    color: rgb(91, 74, 129);
+    padding: 15px;
+    height: 20px;
+}
+.Chapter_Content a:hover {
+    color: #ffc107;
+}
+.chapter {
+    display: flex;
+    width: 80%;
+    height: 80px;
+    margin: 0;
+}
+.dropbtn {
+    background-color: #793914f5;
+    color: white;
+    width: 11.5%;
+    padding: 10px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+  }
+  
+  
+  .dropbtn:hover, .dropbtn:focus {
+    background-color: #29b959;
+  }
+  .DropDown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .DropDown a:hover {background-color: #ddd;}
+  
+  .show {display: block;}
+
+  @media screen and (max-width: 960px){
+    .dropbtn {
+        width:23.5%;
+    }
+    .DropDown .chapter {
+        display: block;
+        cursor: pointer;
+    }
+  }
+  .topnav {
+    /* background-color: #4be0cc; */
+    /* overflow: hidden; */
+  position: absolute;
+  top: 14.6%;
+  /* -ms-transform: translateY(-90%); */
+  align-items: center;
+  text-align: center;
+  left: 0;
+  padding-left: 600px;
+
+  }
+  
+  .topnav a {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .topnav a.active {
+    background-color: #2196F3;
+    color: white;
+  }
+  
+  .topnav input[type=text] {
+    float: right;
+    padding: 6px;
+    margin-top: 8px;
+    margin-right: 16px;
+    border: 1px solid black;
+    font-size: 17px;
+  }

@@ -58,9 +58,10 @@ body{
  
 }
 
-.form-control input:focus{
+.form-control input: focus{
     outline: 5;
-    border-color: #777 ;
+    border-color: #777* ;
+    
 }
 
 .form-control input[type="text"]

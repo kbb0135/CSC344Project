@@ -31,12 +31,19 @@
                 <a href="/" class = "button">Progress Report</a>
             </li>
             <li class = "navbar__btn">
-                <a href="/" class = "button">Settings</a>
+                <div class = "dropdown1">
+                    <button onclick="myFunction1()" class = "setting">Settings</button>
+                    <div id = "myDropdown1" class="dropdown-content1">
+                        <a href = "#DarkMode">DarkMode</a>
+                        <a href = "#LightMode">LightMode</a>
+                    </div>
+                </div>
             </li>
         </ul>
         <!---------------------------------->
         </div>
     </nav>
+    <!-- gggg -->
     <!-- Content for chapter title -->
     <div class = "Chapter_Content">
         <button onclick="myFunction()" class = "dropbtn">Chapter</button>
@@ -49,6 +56,7 @@
                 <a href="\" class = "chapter">Chapter 6</a><br>
                 <a href="\" class = "chapter">Chapter 7</a>
             </div>
+            
             <div class="topnav">
                 <input type="text" placeholder="Search..">
               </div>

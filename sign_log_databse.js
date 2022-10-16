@@ -7,6 +7,7 @@ var firebaseConfig = {
     appId: "1:1004911619138:web:d24fae253bd36beac7d1db",
     measurementId: "G-0SYVCJ79PZ"
   };
+  
 
   //Initializing firebase
  firebase.initializeApp(firebaseConfig);
@@ -14,7 +15,7 @@ var firebaseConfig = {
 
   //Initializing variables
   const auth = firebase.auth()
-  const auth = firebase.database()
+  const database = firebase.database()
 
   //setting up signup function
 function signup(){
@@ -28,6 +29,44 @@ cpassword = document.getElementById('cpassword').value
 
 
 //Validating input fields 
+if (validate_email(email) == false || validate_password(password) == false){
+  alert('Email is out of line')
+  return
+}
+if (validate_field (firstname) == false || validate_field(lastname) == false || 
+  validate_field(cpassword) == false) {
+  alert('One or more field is out of line')
+  return
+}
+
+// Authentication
+auth.createUserWithEmailAndPassword(email,password)
+.then(function(){
+  var user = auth.currentUser
+
+  // Adding user to the Firebase Database
+  var database_ref = database.ref()
+
+  //Creating user data
+  var user_data = {
+    email : email,
+    firstname : firstname,
+    lastname: lastname,
+    last_login : Date.now()
+  }
+ 
+  database_ref.child('users/' + user.uid).set(user_data)
+ 
+  alert('User Created!')})
+.catch(function(error){
+  // Firebase will let user know about the errors.
+  var error_code = error.code
+  var error_message = error.message
+
+  alert(error_message)
+})
+
+
 
 }
 

@@ -1,18 +1,15 @@
+
 var firebaseConfig = {
-    apiKey: "AIzaSyCviRhq1NKJDU77aD9lC5hOjla1Fbx3xVA",
-    authDomain: "signup-and-login-databse.firebaseapp.com",
-    databaseURL: "https://signup-and-login-database-default-rtdb.firebaseio.com",
-    projectId: "signup-and-login-databse",
-    storageBucket: "signup-and-login-databse.appspot.com",
-    messagingSenderId: "1004911619138",
-    appId: "1:1004911619138:web:d24fae253bd36beac7d1db",
-    measurementId: "G-0SYVCJ79PZ"
-  };
-  
+  apiKey: "AIzaSyCSyBurL9h7JZszPZYvbjUy92E0YRI81Wk",
+  authDomain: "loginsignup-28ffa.firebaseapp.com",
+  projectId: "loginsignup-28ffa",
+  storageBucket: "loginsignup-28ffa.appspot.com",
+  messagingSenderId: "555062907596",
+  appId: "1:555062907596:web:6ac967fae2ccda594da869"
+};
 
-  //Initializing firebase
- firebase.initializeApp(firebaseConfig);
-
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
 
   //Initializing variables
 const auth = firebase.auth()
@@ -32,7 +29,7 @@ cpassword = document.getElementById('cpassword').value
 
 //Validating input fields 
 if (validate_email(email) == false || validate_password(password) == false){
-  alert('Email or Password is empty!!')
+  alert('Email or Password is invalid!!')
   return
 }
 if (validate_field (firstname) == false || validate_field(lastname) == false || 
@@ -79,10 +76,10 @@ function validate_email(email){
 
   if (expression.test(email) == true){
     //email correct
-    return true
+    return true;
   } else{
     //email incorrect
-    return false
+    return false;
   }
 }
 
@@ -90,10 +87,10 @@ function validate_password(password)
 {
   //password must be six or more
   if(password < 6){
-    return false
+    return false;
   }
   else{
-    return true
+    return true;
   }
 }
 

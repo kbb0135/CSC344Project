@@ -1,8 +1,8 @@
 const quizData = [
     {
         question: "What does HTML stand for?",
-        a: "Hypertext Markup Language",
-        b: "Hypertext Makeup Language",
+        a: "Hyper Text Markup Language",
+        b: "Hyper Text Makeup Language",
         c: "Hyperloop Machine Language",
         d: "Hyper Tag Machine Linux",
         correct: "a",
@@ -42,6 +42,7 @@ const d_text = document.getElementById('d_text')
 const submitBtn = document.getElementById('submit')
 let currentQuiz = 0
 let score = 0
+
 loadQuiz()
 function loadQuiz() {
     deselectAnswers()

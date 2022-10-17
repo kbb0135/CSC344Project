@@ -84,6 +84,7 @@ crossorigin="anonymous" />
     const firebaseConfig = {
       apiKey: "AIzaSyAxkfTx6Lh8pul3UreKNdS4Wrsn9xdzWP0",
       authDomain: "signuplogin-d859d.firebaseapp.com",
+      authDomain: "kbb0135.github.io",
       projectId: "signuplogin-d859d",
       storageBucket: "signuplogin-d859d.appspot.com",
       messagingSenderId: "675811240981",
@@ -93,7 +94,6 @@ crossorigin="anonymous" />
     // Initialize Firebase
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
-
 
     document.getElementById("signup").addEventListener('click', function(){
         firstname = document.getElementById('firstname').value;
@@ -116,4 +116,5 @@ crossorigin="anonymous" />
         });
     })
   </script>
+  
 </html>

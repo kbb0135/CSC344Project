@@ -20,7 +20,8 @@ const database = firebase.database()
 
   //setting up signup function
 function signup(){
-    
+  //prem
+  
 //Getting all the input fields
 firstname = document.getElementById('firstname').value
 lastname  = document.getElementById('lastname').value

@@ -75,6 +75,9 @@ h1{
     line-height: 20px;
     color: rgb(91, 74, 129);
 }
+.Chapter_Content chapter{
+    padding:20x;
+}
 
 .loginbox a:hover
 {

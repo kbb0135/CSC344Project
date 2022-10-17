@@ -9,6 +9,7 @@
 }
 
 body{
+    /* gajsf */
     background: rgb(225, 235, 227);
     display: flex;
     align-items: center;
@@ -27,14 +28,19 @@ body{
 }
 
 .header{
-    background-color: #12c12c;
+    background-color: #1c7914;
+    padding: 11px;
+    height: 50px;
 }
 
 .header h2{
     color: #000;
     font-size: 26px;
+    padding-bottom: 10px; 
     text-transform: uppercase;
     text-align: center; 
+    margin : 0;
+    position: relative;
 }
 
 .form
@@ -63,9 +69,17 @@ body{
 {
     background: #d9d9d9;
     height: 30px;
-    width:300px;
+    width: 300px;
+    border-radius: 5px;
 }
 
+.form-control input[type="password"]
+{
+    background: #d9d9d9;
+    height: 30px;
+    width: 300px;
+    border-radius: 5px;
+}
 
 .form-contol.success input{
     border-color: #39df7e;
@@ -81,9 +95,9 @@ body{
     top:40px;
     visibility: hidden;
 }
-.form .button{
-    background:#0dc228de;
-    border-radius: 5px;
+#button_container{
+    background:#1c7914;
+    border-radius: 20px;
     border: none;
     outline: none;
     display: block;
@@ -91,13 +105,13 @@ body{
     padding: 15px 0;
     margin-top: 15px;
     width: 100%;
-    color: #fff;
+    color: rgb(11, 11, 11);
     font-weight: bold;
-    text-transform: uppercase;
+    text-align: center;
 }
 
-.form .button:hover{
-    background: #51dd90;
+#button_container:hover{
+    background:#ffc107;
     cursor: pointer;
 }
 .askLogin {

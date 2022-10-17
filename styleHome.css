@@ -370,6 +370,7 @@ body {
 .show {display: block;}
 
 #icon {
+    
     width: 30px;
     height: 30px;
     cursor: pointer;

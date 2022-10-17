@@ -1,6 +1,7 @@
 var firebaseConfig = {
     apiKey: "AIzaSyCviRhq1NKJDU77aD9lC5hOjla1Fbx3xVA",
     authDomain: "signup-and-login-databse.firebaseapp.com",
+    databaseURL: "https://signup-and-login-database-default-rtdb.firebaseio.com",
     projectId: "signup-and-login-databse",
     storageBucket: "signup-and-login-databse.appspot.com",
     messagingSenderId: "1004911619138",
@@ -14,8 +15,8 @@ var firebaseConfig = {
 
 
   //Initializing variables
-  const auth = firebase.auth()
-  const database = firebase.database()
+const auth = firebase.auth()
+const database = firebase.database()
 
   //setting up signup function
 function signup(){
@@ -30,12 +31,12 @@ cpassword = document.getElementById('cpassword').value
 
 //Validating input fields 
 if (validate_email(email) == false || validate_password(password) == false){
-  alert('Email is out of line')
+  alert('Email or Password is empty!!')
   return
 }
 if (validate_field (firstname) == false || validate_field(lastname) == false || 
   validate_field(cpassword) == false) {
-  alert('One or more field is out of line')
+  alert('One or more field is empty!!')
   return
 }
 
@@ -58,7 +59,9 @@ auth.createUserWithEmailAndPassword(email,password)
   database_ref.child('users/' + user.uid).set(user_data)
  
   alert('User Created!')})
-.catch(function(error){
+
+  //handles errors:
+  .catch(function(error){
   // Firebase will let user know about the errors.
   var error_code = error.code
   var error_message = error.message

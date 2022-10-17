@@ -95,7 +95,7 @@ body{
     top:40px;
     visibility: hidden;
 }
-.form .button{
+#button_container{
     background:#1c7914;
     border-radius: 20px;
     border: none;
@@ -105,12 +105,12 @@ body{
     padding: 15px 0;
     margin-top: 15px;
     width: 100%;
-    color: #fff;
+    color: rgb(11, 11, 11);
     font-weight: bold;
-    text-transform: uppercase;
+    text-align: center;
 }
 
-.form .button:hover{
+#button_container:hover{
     background:#ffc107;
     cursor: pointer;
 }

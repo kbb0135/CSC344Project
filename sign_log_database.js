@@ -69,7 +69,6 @@ auth.createUserWithEmailAndPassword(email,password)
 
 
 
-
 }
 
 function validate_email(email){

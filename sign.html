@@ -5,70 +5,74 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+ <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
 integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ=="
-crossorigin="anonymous" />
+crossorigin="anonymous" /> -->
 
 <link rel="stylesheet" type="text/css" href="sign.css">
 </head>
 
 <body>
     
-    <div class="container"> 
+    <div class="container" id="content01"> 
         <div class="header">
             <h2>Sign Up</h2>
         </div>
     
-        <form action="" class="form" id="form">
-            <div class="form-control"> 
+        <!-- <form action="" class="form" id="form"> -->
+        <div class="form-control"> 
+
+            <form class ="form" id="form">
                 <p>First Name</p>
                 <input type="text" name="" id="username" placeholder="Enter First Name" autocomplete="off">
-                <!-- <i class="fas fa-check-circle"></i>
-                <i class="fas fa-exclamation-circle"></i>
-                <small>Error Message</small> -->
-            </div>
+            <!-- </div> -->
         
-            <div class="form-control"> 
-                <p>Last Name</p>
-                <input type="text" name="" id="username" placeholder="Enter Last Name" autocomplete="off">
-                <!-- <i class="fas fa-check-circle"></i>
-                <i class="fas fa-exclamation-circle"></i>
-                <small>Error Message</small> -->
-            </div>
+            <!-- <div class="form-control">  -->
+                <!-- <p>Last Name</p>
+                <input type="text" name="" id="username2" placeholder="Enter Last Name" autocomplete="off"> -->
+            <!-- </div> -->
 
-            <div class="form-control"> 
+            <!-- //<div class="form-control">  -->
                 <p>Email</p>
-                <input type="text" name="" id="username" placeholder="Enter Email" autocomplete="off">
-                <!-- <i class="fas fa-check-circle"></i>
-                <i class="fas fa-exclamation-circle"></i>
-                <small>Error Message</small> -->
+                <input type="email" id="emailid" placeholder="Enter Email" autocomplete="off">
+            <!-- //</div> -->
             
-            </div>
-            
-            <div class="form-control"> 
+            <!-- <div class="form-control">  -->
                 <p>Password</p>
-                <input type="text" name="" id="username" placeholder="Enter Password" autocomplete="off">
+                <input type="password" name="password" id="passwordid" placeholder="Enter Password">
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
                 <small>Error Message</small>
-            </div>
+            <!-- </div> -->
 
-            <div class="form-control"> 
+                <button type="submit" onclick="UserRegister()" id="btn"> Sign Up </button>
+                <div class = "askLogin">
+                    <p>Already a member?</p>
+                    <a href="login.html">Login Here </a>
+                </div>
+            </form>
+        </div>
+
+            <!-- <div class="form-control"> 
                 <p>Confirm Password</p>
-                <input type="text" name="" id="username" placeholder="Confirm Password" autocomplete="off">
+                <input type="password" name="" id="passwordid2" placeholder="Confirm Password" autocomplete="off">
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
                 <small>Error Message</small>
-            </div>
+            </div> -->
 
-            <input type="button" value="Sign Up" class="button">
-            
-            <div class = "askLogin">
+            <!-- <div class = "askLogin">
                 <p>Already a member?</p>
                 <a href="login.html">Login Here </a>
-            </div>
-        </form>
+            </div> -->
     </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
+<script src="data.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="server.js"></script>
     
+
 </body>
 </html>

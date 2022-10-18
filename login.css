@@ -36,7 +36,7 @@ h1{
 
 .loginbox input{
     width: 100%;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 
 .loginbox input[type="text"], input[type="password"]
@@ -83,6 +83,13 @@ h1{
 {
     color: #ffc107;
 }
+
+.home a{
+    color: rgb(172, 56, 56);
+    margin-bottom: 1000px;
+    margin-left: 00px;
+}
+
 
 
 

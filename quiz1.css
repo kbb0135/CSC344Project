@@ -59,3 +59,12 @@ body{
     outline: none;
     background-color: #44b927;
   }
+  .back a{
+    display: flex;
+    text-decoration: none;
+    color: red;
+    padding-left: 12px;
+  }
+  .back a:hover {
+    cursor: pointer;
+  }

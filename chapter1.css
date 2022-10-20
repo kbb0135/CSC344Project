@@ -6,12 +6,29 @@
     font-family: 'Nunito', sans-serif;
    
 }
+
+
+
+
+body{
+    font-family:ubuntu;
+}
 body{
     background-color:var(--primary-color);
+    z-index: 1;
+    background:linear-gradient(-45deg,#b8c6db);
+    background-size: 400% 400%;
+    width:100%;
+    height:100vh;
+ }
+
+.button_container{
+    margin-left: 1200px;
+    cursor:pointer;
 }
 
 .header h1{
-    color: rgb(47, 174, 47);
+    color: rgb(70, 242, 70);
     text-align:  center;
     margin-top: 20px;
     margin-bottom: 50px;
@@ -27,28 +44,36 @@ body{
 }
 
 .image{
-    padding: 100;
-    margin-top: 30px;
-    margin-right: 50px;
-    margin-left: 300px;
-    border-style: solid;
-    border:auto ;
-    width: 35%;
-    border-width:400; 
+  
+  height: 500px;
+  width:800px;
+  position:relative;
+  margin-left:200px;
+  margin-top:60px;
 }
-
+.image{
+    width:100%;
+    height:100%;
+}
+.image2{
+    border: 10px solid;
+}
 .video{
-    margin-left: 650px; 
-    margin-top: 50px;
+    height:350px;
+    width:550px;
+    margin-left: 150px;
+    border: 10px solid;
+    border-color: rgb(255, 244, 240);
+    
 }
 .uses h2{
-    color: rgb(12, 12, 12);
+    color: var(--secondary-color);
     margin-left: 160px;
     margin-top: 30px;
 }
 
 .uses li{
-    color: rgb(12, 12, 12);
+    color: var(--secondary-color);
     margin-left: 180px;
     font-size:19px;
 

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +13,7 @@
     
     <nav class = "navbar">
         <div class = "navbar__container">
-            <a href="/" id="navbar__logo"><i class = "fa-solid fa-laptop-code"></i>Code-HTML</a>
+            <a href="home.html" id="navbar__logo"><i class = "fa-solid fa-laptop-code"></i>Code-HTML</a>
             <div class = "navbar__toggle" id="mobile-menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -27,7 +28,7 @@
                 <a href="/" class = "navbar__links">FlashCard</a>
             </li>
             <li class = "navbar__btn">
-                <a href="/" class = "button">Quizzes</a>
+                <a href="quiz1.html" class = "button">Quizzes</a>
             </li>
             <li class = "navbar__btn">
                 <a href="/" class = "button">Progress Report</a>
@@ -42,8 +43,8 @@
                 </div>
             </li>
         </ul>
+       
         <img src = "images/moon.png" onclick = darkMode() alt="moon" id="icon"> 
-        <!---------------------------------->
         
         </div>
     </nav>
@@ -68,6 +69,7 @@
     
     <!---Creation of chapters Continued--->
     
+    <div class = bakground>
     <div class="header">
         <h1>Chapter One</h1>
         <h2> Intorduction to HTML</h2>
@@ -76,14 +78,17 @@
         <li>HTML has many tags used to define different elements.</li>
         </div>
     <div class="image" >
-        <img src ="images/basic_html.jpg" alt="A Sample of HTML document" width="400" height="400">
-        
+        <img class ="image2" src ="images/basic_html.jpg" alt="A Sample of HTML document" width="400" height="400">
+        <iframe class="video" width="530" height="315" src="https://www.youtube.com/embed/rOPKC49gTkk" title="YouTube video player" frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    
     </div>
 
+    <!--
     <div class ="video">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/rOPKC49gTkk" title="YouTube video player" frameborder="0" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
+    </div>-->
     
     <div class="uses">
         <h2> Uses of basic HTML tags:</h2>
@@ -95,7 +100,12 @@
         <li>ol: Creates ordered list.</li>
         <li>ul: Creates unordered list.</li>
         <li>a: has many tags used to define different elements.</li>
-    </div>
+    
+
+        <div class ="button_container">
+            <button class="button">Next >></button>
+        </div>
+
     <script src = "app.js"></script>
 </body>
 </html>

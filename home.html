@@ -35,7 +35,7 @@
                     <button onclick="myFunction1()" class = "setting">Settings</button>
                     <div id = "myDropdown1" class="dropdown-content1">
                         <a href = "home.html" class = "DarkMode">User Preference</a>
-                        <a href = "home.html">Logout</a>
+                        <a href = "home.html" id = 'logout'>Logout</a>
                     </div>
                 </div>
             </li>
@@ -82,4 +82,48 @@
         <img src="images/Edu_image.svg" alt="pic" id="main__img" />
     </div>
 </body>
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-app.js";
+    import { getDatabase,set, ref,update } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-database.js";
+    import { getAuth, signInWithEmailAndPassword, signOut} from "https://www.gstatic.com/firebasejs/9.12.1/firebase-auth.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyBTwiCAygR2JDHybOVye84f-edq5RB1bhg",
+      authDomain: "signuplogin-386ba.firebaseapp.com",
+      databaseURL: "https://signuplogin-386ba-default-rtdb.firebaseio.com",
+      projectId: "signuplogin-386ba",
+      storageBucket: "signuplogin-386ba.appspot.com",
+      messagingSenderId: "1004890798066",
+      appId: "1:1004890798066:web:83912465d7cf11e2e59d6b"
+    };
+    // import { getDatabase,set, ref, child } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-database.js";
+    // // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase(app);
+    const auth = getAuth();
+    const user = auth.currentUser;
+    if (user !== null) {
+  // The user object has basic properties such as display name, email, etc.
+  const displayName = user.displayName;
+//   const email = user.email;
+//   const photoURL = user.photoURL;
+//   const emailVerified = user.emailVerified;
+
+  // The user's ID, unique to the Firebase project. Do NOT use
+  // this value to authenticate with your backend server, if
+  // you have one. Use User.getToken() instead.
+  const uid = user.uid;
+}
+document.getElementById('logout').addEventListener('click',function(){
+    signOut(auth).then(() => {
+  alert("Sign-out successful");
+  window.location = "login.html";
+}).catch((error) => {
+  alert("Something Went wrong");
+});
+});
+</script>
 </html>

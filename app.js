@@ -8,7 +8,7 @@ menu.addEventListener('click',function() {
 function myFunction() { 
     document.getElementById("DropDown").classList.toggle("show");
 }
-windows.onclick = function(event) {
+window.onclick = function(event) {
     if(!event.target.matches('.dropbtn')) {
         var dropdowns = document.getElementsByClassName("dropdown-conetent");
         var i;

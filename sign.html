@@ -107,11 +107,6 @@ crossorigin="anonymous" />
         var email = document.getElementById('email').value;
         var password = document.getElementById('password').value;
 
-        function enc() {
-            var pass = CryptoJS.AES.encrypt(password, password);
-            return pass.toString();
-          }
-
         createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
          // Signed in 
@@ -119,8 +114,7 @@ crossorigin="anonymous" />
           set(ref(database, 'users/' + user.uid), {
             firstname: firstname,
             lastname: lastname,
-            email: email,
-            password: enc()
+            email: email
           })
           
           alert('User created');

@@ -35,7 +35,7 @@
                     <button onclick="myFunction1()" class = "setting">Settings</button>
                     <div id = "myDropdown1" class="dropdown-content1">
                         <a href = "home.html" class = "DarkMode">User Preference</a>
-                        <a href = "home.html" id = 'logout'>Logout</a>
+                        <h2 id = 'logout'>Logout</h2>
                     </div>
                 </div>
             </li>
@@ -84,8 +84,8 @@
 </body>
 <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-app.js";
-    import { getDatabase,set, ref,update } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-database.js";
-    import { getAuth, signInWithEmailAndPassword, signOut} from "https://www.gstatic.com/firebasejs/9.12.1/firebase-auth.js";
+    import { getDatabase,set, ref,update, child, get } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-database.js";
+    import { getAuth, signInWithEmailAndPassword,onAuthStateChanged, signOut} from "https://www.gstatic.com/firebasejs/9.12.1/firebase-auth.js";
     // TODO: Add SDKs for Firebase products that you want to use
     // https://firebase.google.com/docs/web/setup#available-libraries
   
@@ -99,31 +99,91 @@
       messagingSenderId: "1004890798066",
       appId: "1:1004890798066:web:83912465d7cf11e2e59d6b"
     };
-    // import { getDatabase,set, ref, child } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-database.js";
-    // // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const database = getDatabase(app);
-    const auth = getAuth();
-    const user = auth.currentUser;
-    if (user !== null) {
-  // The user object has basic properties such as display name, email, etc.
-  const displayName = user.displayName;
-//   const email = user.email;
-//   const photoURL = user.photoURL;
-//   const emailVerified = user.emailVerified;
+    
+const app = initializeApp(firebaseConfig);
+const database = getDatabase(app);
+const dbRef = ref(getDatabase());
+const auth = getAuth();
+onAuthStateChanged(auth, (user) => {
 
-  // The user's ID, unique to the Firebase project. Do NOT use
-  // this value to authenticate with your backend server, if
-  // you have one. Use User.getToken() instead.
-  const uid = user.uid;
-}
+  if (user) {
+    // User is signed in, see docs for a list of available properties
+    // https://firebase.google.com/docs/reference/js/firebase.User
+     const uid = user.uid;
+    //     console.log("test1");
+    //     console.log(uid);
+    //     const firstname = user.displayName;
+    //     console.log(firstname);
+
+        get(child(dbRef, `users/${uid}`)).then((snapshot) => {
+  if (snapshot.exists()) {
+    console.log(snapshot.val());
+  } else {
+    console.log("No data available");
+  }
+}).catch((error) => {
+  console.error(error);
+});
 document.getElementById('logout').addEventListener('click',function(){
     signOut(auth).then(() => {
+        //alert(user.firstname);
+    var currentUser = JSON.parse(sessionStorage.getItem('user'));
+
+    sessionStorage.removeItem('user');
   alert("Sign-out successful");
+
   window.location = "login.html";
 }).catch((error) => {
   alert("Something Went wrong");
 });
 });
+    // ...
+  } 
+  else {
+    document.getElementById('logout').addEventListener('click',function(){
+        alert("User not logged in");
+    })
+  }
+});
+
+//     // import { getDatabase,set, ref, child } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-database.js";
+//     // // Initialize Firebase
+//     const app = initializeApp(firebaseConfig);
+//     const database = getDatabase(app);
+//     const auth = getAuth();
+//     const user = auth.currentUser;
+//     if (user) {
+
+//   // The user object has basic properties such as display name, email, etc.
+//   const displayName = user.displayName;
+// //   const email = user.email;
+// //   const photoURL = user.photoURL;
+// //   const emailVerified = user.emailVerified;
+
+//   // The user's ID, unique to the Firebase project. Do NOT use
+//   // this value to authenticate with your backend server, if
+//   // you have one. Use User.getToken() instead.
+//   const uid = user.uid;
+// //   FirebaseUser user = FirebaseUser.getInstance().getCurrentUser();
+
+// document.getElementById('logout').addEventListener('click',function(){
+//     signOut(auth).then(() => {
+//         //alert(user.firstname);
+//     var currentUser = JSON.parse(sessionStorage.getItem('user'));
+
+//     sessionStorage.removeItem('user');
+//   alert("Sign-out successful");
+
+//   window.location = "login.html";
+// }).catch((error) => {
+//   alert("Something Went wrong");
+// });
+// });
+// }
+// else { 
+//     console.log(user.firstname);
+//     alert("User is not logged")
+// }
+
 </script>
 </html>

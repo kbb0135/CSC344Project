@@ -51,6 +51,7 @@ document.getElementById('confirm').addEventListener('click',function(){
     sendPasswordResetEmail(auth, email)
   .then(() => {
     alert("Email Sent");
+    window.location("login.html");
   })
   .catch((error) => {
     alert("Test 2")

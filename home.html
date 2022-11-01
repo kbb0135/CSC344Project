@@ -104,68 +104,26 @@ const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 const dbRef = ref(getDatabase());
 const auth = getAuth();
-onAuthStateChanged(auth, (user) => {
+//onAuthStateChanged(auth, (user) => {
 
-  if (user) {
-    // User is signed in, see docs for a list of available properties
-    // https://firebase.google.com/docs/reference/js/firebase.User
-     const uid = user.uid;
-    //     console.log("test1");
-    //     console.log(uid);
-    //     const firstname = user.displayName;
-    //     console.log(firstname);
+//   if (user) {
+//     // User is signed in, see docs for a list of available properties
+//     // https://firebase.google.com/docs/reference/js/firebase.User
+//      const uid = user.uid;
+//     //     console.log("test1");
+//     //     console.log(uid);
+//     //     const firstname = user.displayName;
+//     //     console.log(firstname);
 
-        get(child(dbRef, `users/${uid}`)).then((snapshot) => {
-  if (snapshot.exists()) {
-    console.log(snapshot.val());
-  } else {
-    console.log("No data available");
-  }
-}).catch((error) => {
-  console.error(error);
-});
-document.getElementById('logout').addEventListener('click',function(){
-    signOut(auth).then(() => {
-        //alert(user.firstname);
-    var currentUser = JSON.parse(sessionStorage.getItem('user'));
-
-    sessionStorage.removeItem('user');
-  alert("Sign-out successful");
-
-  window.location = "login.html";
-}).catch((error) => {
-  alert("Something Went wrong");
-});
-});
-    // ...
-  } 
-  else {
-    document.getElementById('logout').addEventListener('click',function(){
-        alert("User not logged in");
-    })
-  }
-});
-
-//     // import { getDatabase,set, ref, child } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-database.js";
-//     // // Initialize Firebase
-//     const app = initializeApp(firebaseConfig);
-//     const database = getDatabase(app);
-//     const auth = getAuth();
-//     const user = auth.currentUser;
-//     if (user) {
-
-//   // The user object has basic properties such as display name, email, etc.
-//   const displayName = user.displayName;
-// //   const email = user.email;
-// //   const photoURL = user.photoURL;
-// //   const emailVerified = user.emailVerified;
-
-//   // The user's ID, unique to the Firebase project. Do NOT use
-//   // this value to authenticate with your backend server, if
-//   // you have one. Use User.getToken() instead.
-//   const uid = user.uid;
-// //   FirebaseUser user = FirebaseUser.getInstance().getCurrentUser();
-
+//         get(child(dbRef, `users/${uid}`)).then((snapshot) => {
+//   if (snapshot.exists()) {
+//     console.log(snapshot.val());
+//   } else {
+//     console.log("No data available");
+//   }
+// }).catch((error) => {
+//   console.error(error);
+// });
 // document.getElementById('logout').addEventListener('click',function(){
 //     signOut(auth).then(() => {
 //         //alert(user.firstname);
@@ -179,11 +137,15 @@ document.getElementById('logout').addEventListener('click',function(){
 //   alert("Something Went wrong");
 // });
 // });
-// }
-// else { 
-//     console.log(user.firstname);
-//     alert("User is not logged")
-// }
+//     // ...
+//   } 
+//   else {
+//     document.getElementById('logout').addEventListener('click',function(){
+//         alert("User not logged in");
+//     })
+//   }
+// });
+
 
 </script>
 </html>

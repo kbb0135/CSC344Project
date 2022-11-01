@@ -1,3 +1,4 @@
+
 const quizData = [
     {
         question: "What does HTML stand for?",
@@ -79,6 +80,13 @@ submitBtn.addEventListener('click', () => {
            <h2>You answered ${score}/${quizData.length} questions correctly</h2>
            <button onclick="location.reload()">Reload</button>
            `
+           
        }
     }
 })
+    
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    

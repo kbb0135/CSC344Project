@@ -16,9 +16,10 @@
             <p> Email </p>
             <input type="text" id='email' name="email"  placeholder="E-mail" />
             <p> Password </p>
-            <input type="password" name="" id='password' placeholder="Enter Password" autocomplete="off">
-            <input type="submit"  id='login' name = "login" value="Login"/>
-            <a href="/"> Forget password? </a> <br>
+            <input type="password" placholder = "password" id='password' placeholder="Enter Password" autocomplete="on">
+            <!-- <input type="submit"  id='login' name = "Signin" value="Sign In"/> -->
+            <h2 id ='login' >SignUp</h2>
+            <a href="reset.html"> Forget password? </a> <br>
             <a href="sign.html"> Sign up? </a> <br>
             <!-- <div class="home"> 
                 <a href="home.html"> HOME </a>
@@ -32,57 +33,133 @@
 </head>
 <script type="module">
     // Import the functions you need from the SDKs you need
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-app.js";
-    import { getDatabase,set, ref, update } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-database.js";
-    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-auth.js";
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js";
+    import { getDatabase,set, ref,update } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-database.js";
+    import { getAuth, signInWithEmailAndPassword, signOut} from "https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js";
     // TODO: Add SDKs for Firebase products that you want to use
     // https://firebase.google.com/docs/web/setup#available-libraries
   
     // Your web app's Firebase configuration
     const firebaseConfig = {
-      apiKey: "AIzaSyBTwiCAygR2JDHybOVye84f-edq5RB1bhg",
-      authDomain: "signuplogin-386ba.firebaseapp.com",
-      databaseURL: "https://signuplogin-386ba-default-rtdb.firebaseio.com",
-      projectId: "signuplogin-386ba",
-      storageBucket: "signuplogin-386ba.appspot.com",
-      messagingSenderId: "1004890798066",
-      appId: "1:1004890798066:web:83912465d7cf11e2e59d6b"
-    };
-    // Initialize Firebase
+    apiKey: "AIzaSyD4pas0pvQQovr1vpT5QlBYWR_1OthDUEI",
+    authDomain: "dataapp-8bc6d.firebaseapp.com",
+    databaseURL: "https://dataapp-8bc6d-default-rtdb.firebaseio.com",
+    projectId: "dataapp-8bc6d",
+    storageBucket: "dataapp-8bc6d.appspot.com",
+    messagingSenderId: "1052775979865",
+    appId: "1:1052775979865:web:b8de5ba5d832e93b18ca48"
+  };
+    // import { getDatabase,set, ref, child } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-database.js";
+    // // Initialize Firebase
     const app = initializeApp(firebaseConfig);
     const database = getDatabase(app);
     const auth = getAuth();
 
+ //how to make table in html file
+
+
     document.getElementById('login').addEventListener('click', function(){
-        alert("test1");
-        var email1 = document.getElementById('email').value;
-        var password1 = document.getElementbyId('password').value;
+        var email = document.getElementById('email').value;
+        var password = document.getElementById('password').value;
+        //alert("test1");
 
+        signInWithEmailAndPassword(auth, email, password).then((userCredential) => {
+            //alert("test2");
+        // Signed in 
+            const user = userCredential.user;
 
-        alert("test2");
-        signInWithEmailAndPassword(auth, email1, password1)
-  .then((userCredential) => {
-    if(userCredential.exists()) {
-        let dpassword = decPass(userCredential.val().password);
-        if(dpassword == password1.value) {
-            login();
-        }
-    }
-    // Signed in 
-    const user = userCredential.user;
-    const date = new Date();
-    update(ref(database, 'users/' + user.uid), {
-            last_login: date,
-          })
-          alert("Successfully Logged in");
-    // ...
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    alert(errorMessage);
-  });
+            const dt = new Date();
+            update(ref(database, 'users/' + user.uid),{
+                last_login: dt,
+            })
 
+            alert('User loged in!');
+            sessionStorage.setItem('user', JSON.stringify(user));
+            window.location = "home.html"
+        // ...
+        })
+            .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+
+            alert(errorMessage);
     });
+
+});
+
+
+
+
+
+
+
+        // document.getElementById('login').addEventListener('click', function(){
+
+        // });
+
+    //     function AuthenticationUser() {
+    //     const dbref = ref(database);
+    //     update(child(bdref, "users/"+user.uid)).then((snapshot)=>{
+    //         if(snapshot.exists()) {
+    //             let dbpass = decPass(snapshot.val().password);
+    //             if(dbpass = pass.value) {
+    //                 login();
+    //             }
+    //             else {
+    //                 alert("User doesn't exist");
+    //             }
+    //         }
+    //         else {
+    //             alert("Username or password is invlaid");
+    //         }
+    //     });
+
+    // }
+
+    // function decPass(dpass) {
+    //     var pass12 = CryptoJS.AES.decrypt(dpass, pass.value);
+    //     return pass12.toString();
+    // }
+
+    // function login(user) {
+    //     let keepLoggedIn = document.getElementById('customSwitch1').checked;
+    //     if(!keepLoggedIn) {
+    //         sessionStorage.setItem('user', JSON.stringify(user));
+    //         window.location = "home.html";
+    //     }
+    //     else {
+    //         localStorage.setItem('keepLoggedIn', 'yes');
+    //         localStorage.setItem('user', JSON.stringify(user));
+    //         window.location = "home.html";
+
+    //     }
+    // }
+
+
+//         alert("test2");
+//         signInWithEmailAndPassword(auth, email, password)
+//   .then((userCredential) => {
+//     if(userCredential.exists()) {
+//         let dpassword = decPass(userCredential.val().password);
+//         if(dpassword == password1.value) {
+//             login();
+//         }
+//     }
+//     // Signed in 
+//     const user = userCredential.user;
+//     const date = new Date();
+//     update(ref(database, 'users/' + user.uid), {
+//             last_login: date,
+//           })
+//           alert("Successfully Logged in");
+//     // ...
+//   })
+//   .catch((error) => {
+//     const errorCode = error.code;
+//     const errorMessage = error.message;
+//     alert(errorMessage);
+//   });
+
+//     // });
 </script>
 </html>

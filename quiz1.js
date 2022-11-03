@@ -1,4 +1,5 @@
-const quizData = [
+
+export const quizData = [
     {
         // count: " ",
         page: "1/4",
@@ -48,7 +49,10 @@ const c_text = document.getElementById('c_text')
 const d_text = document.getElementById('d_text')
 const submit_button = document.getElementById('submit')
 let currentQuiz = 0
-let score = 0
+ export let score = 0
+
+// const timer = document.getElementById('count')
+
 
 // const timer = document.getElementById('count')
 
@@ -108,6 +112,18 @@ submit_button.addEventListener('click', () => {
            <h2>You answered ${score}/${quizData.length} questions correctly</h2>
             <button onclick="location.reload()">See Results</button> 
            `
+           
        }
+       
     }
+    
 })
+export let score1 = score;
+
+
+    
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    

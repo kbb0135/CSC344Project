@@ -49,13 +49,14 @@
             </ul>
         </div>
 
-        <button id="submit"> Submit</button>
+        
+        <button id='submit'> Submit</button>
         <a href = "home.html" class = "back">Back to Home</a>
 
     </div>
 
     <!-- <a href="home.html" class="back">Back to Home</a> -->
-    <script src="quiz1.js"></script>
+    <script type = module src="quiz1.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
 		integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
@@ -67,4 +68,52 @@
     
 
 </body>
+<script type = "module">
+import {quizData} from '/quiz1.js';
+import {score1} from '/quiz1.js';
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js";
+import { getDatabase,set, ref,update, child, get,push} from "https://www.gstatic.com/firebasejs/9.13.0/firebase-database.js";
+import { getAuth, signInWithEmailAndPassword,onAuthStateChanged, signOut} from "https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js";
+const firebaseConfig = {
+    apiKey: "AIzaSyD4pas0pvQQovr1vpT5QlBYWR_1OthDUEI",
+    authDomain: "dataapp-8bc6d.firebaseapp.com",
+    databaseURL: "https://dataapp-8bc6d-default-rtdb.firebaseio.com",
+    projectId: "dataapp-8bc6d",
+    storageBucket: "dataapp-8bc6d.appspot.com",
+    messagingSenderId: "1052775979865",
+    appId: "1:1052775979865:web:b8de5ba5d832e93b18ca48"
+  };
+  
+console.log(score1);
+const app = initializeApp(firebaseConfig);
+const database = getDatabase(app);
+const dbRef = ref(getDatabase());
+const auth = getAuth();
+onAuthStateChanged(auth, (user) => {
+    // const user = userCredential.user;
+        var a = document.getElementById('a').value;
+        var b = document.getElementById('b').value;
+        var c = document.getElementById('c').value;
+        var d = document.getElementById('d').value;
+       // var submit = document.getElementById('submit').value;
+    const uid = user.uid;
+    if(user) {
+        const question = quizData;
+        console.log(question);
+        let score2 = score1;
+        document.getElementById('submit').addEventListener('click', function(){
+            alert("Test1");
+            //console.log("Adb")
+        
+            update(ref(database, 'users/'+user.uid),{
+                Quiz: question,
+                score: score2
+            })
+console.log("test3");
+//console.log(score1);
+})
+        
+}
+})
+</script>
 </html>

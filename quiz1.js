@@ -1,5 +1,5 @@
 
-const quizData = [
+export const quizData = [
     {
         question: "What does HTML stand for?",
         a: "Hyper Text Markup Language",
@@ -42,7 +42,7 @@ const c_text = document.getElementById('c_text')
 const d_text = document.getElementById('d_text')
 const submitBtn = document.getElementById('submit')
 let currentQuiz = 0
-let score = 0
+ export let score = 0
 
 loadQuiz()
 function loadQuiz() {
@@ -82,8 +82,13 @@ submitBtn.addEventListener('click', () => {
            `
            
        }
+       
     }
+    
 })
+export let score1 = score;
+
+
     
     // TODO: Add SDKs for Firebase products that you want to use
     // https://firebase.google.com/docs/web/setup#available-libraries

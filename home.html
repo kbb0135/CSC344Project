@@ -83,22 +83,22 @@
     </div>
 </body>
 <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-app.js";
-    import { getDatabase,set, ref,update, child, get } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-database.js";
-    import { getAuth, signInWithEmailAndPassword,onAuthStateChanged, signOut} from "https://www.gstatic.com/firebasejs/9.12.1/firebase-auth.js";
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js";
+    import { getDatabase,set, ref,update, child, get } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-database.js";
+    import { getAuth, signInWithEmailAndPassword,onAuthStateChanged, signOut} from "https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js";
     // TODO: Add SDKs for Firebase products that you want to use
     // https://firebase.google.com/docs/web/setup#available-libraries
   
     // Your web app's Firebase configuration
     const firebaseConfig = {
-      apiKey: "AIzaSyBTwiCAygR2JDHybOVye84f-edq5RB1bhg",
-      authDomain: "signuplogin-386ba.firebaseapp.com",
-      databaseURL: "https://signuplogin-386ba-default-rtdb.firebaseio.com",
-      projectId: "signuplogin-386ba",
-      storageBucket: "signuplogin-386ba.appspot.com",
-      messagingSenderId: "1004890798066",
-      appId: "1:1004890798066:web:83912465d7cf11e2e59d6b"
-    };
+    apiKey: "AIzaSyD4pas0pvQQovr1vpT5QlBYWR_1OthDUEI",
+    authDomain: "dataapp-8bc6d.firebaseapp.com",
+    databaseURL: "https://dataapp-8bc6d-default-rtdb.firebaseio.com",
+    projectId: "dataapp-8bc6d",
+    storageBucket: "dataapp-8bc6d.appspot.com",
+    messagingSenderId: "1052775979865",
+    appId: "1:1052775979865:web:b8de5ba5d832e93b18ca48"
+  };
     
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
@@ -146,44 +146,6 @@ document.getElementById('logout').addEventListener('click',function(){
   }
 });
 
-//     // import { getDatabase,set, ref, child } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-database.js";
-//     // // Initialize Firebase
-//     const app = initializeApp(firebaseConfig);
-//     const database = getDatabase(app);
-//     const auth = getAuth();
-//     const user = auth.currentUser;
-//     if (user) {
-
-//   // The user object has basic properties such as display name, email, etc.
-//   const displayName = user.displayName;
-// //   const email = user.email;
-// //   const photoURL = user.photoURL;
-// //   const emailVerified = user.emailVerified;
-
-//   // The user's ID, unique to the Firebase project. Do NOT use
-//   // this value to authenticate with your backend server, if
-//   // you have one. Use User.getToken() instead.
-//   const uid = user.uid;
-// //   FirebaseUser user = FirebaseUser.getInstance().getCurrentUser();
-
-// document.getElementById('logout').addEventListener('click',function(){
-//     signOut(auth).then(() => {
-//         //alert(user.firstname);
-//     var currentUser = JSON.parse(sessionStorage.getItem('user'));
-
-//     sessionStorage.removeItem('user');
-//   alert("Sign-out successful");
-
-//   window.location = "login.html";
-// }).catch((error) => {
-//   alert("Something Went wrong");
-// });
-// });
-// }
-// else { 
-//     console.log(user.firstname);
-//     alert("User is not logged")
-// }
 
 </script>
 </html>

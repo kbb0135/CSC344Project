@@ -49,7 +49,7 @@ const c_text = document.getElementById('c_text')
 const d_text = document.getElementById('d_text')
 const submit_button = document.getElementById('submit')
 let currentQuiz = 0
- export let score = 0
+export let score = 0
 
 // const timer = document.getElementById('count')
 
@@ -114,10 +114,9 @@ submit_button.addEventListener('click', () => {
            `
            
        }
-       
     }
-    
 })
+console.log(score,"This is the score")
 export let score1 = score;
 
 

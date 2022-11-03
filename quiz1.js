@@ -1,5 +1,7 @@
 const quizData = [
     {
+        // count: " ",
+        page: "1/4",
         question: "What does HTML stand for?",
         a: "Hyper Text Markup Language",
         b: "Hyper Text Makeup Language",
@@ -8,6 +10,8 @@ const quizData = [
         correct: "a",
     },
     {
+
+        page: "2/4",
         question: "What is the <h1> element used for?",
         a: "Create a Home Page",
         b: "Create a Headline",
@@ -16,6 +20,7 @@ const quizData = [
         correct: "d",
     },
     {
+        page: "3/4",
         question: "What is the <p> element used for?",
         a: "Create a different page",
         b: "Create a paragraph",
@@ -24,6 +29,7 @@ const quizData = [
         correct: "b",
     },
     {
+        page: "4/4",
         question: "What is used to create space around the elements content?",
         a: "Margin",
         b: "Padding",
@@ -35,18 +41,41 @@ const quizData = [
 const quiz= document.getElementById('quiz')
 const answerEls = document.querySelectorAll('.answer')
 const questionEl = document.getElementById('question')
+const pageNum = document.getElementById('page')
 const a_text = document.getElementById('a_text')
 const b_text = document.getElementById('b_text')
 const c_text = document.getElementById('c_text')
 const d_text = document.getElementById('d_text')
-const submitBtn = document.getElementById('submit')
+const submit_button = document.getElementById('submit')
 let currentQuiz = 0
 let score = 0
+
+// const timer = document.getElementById('count')
+
 
 loadQuiz()
 function loadQuiz() {
     deselectAnswers()
     const currentQuizData = quizData[currentQuiz]
+
+    var count = 10;
+var interval = setInterval(function(){
+  document.getElementById('count').innerText=count;
+  count--;
+  if (count === 0){
+    clearInterval(interval);
+    // document.getElementById('count').innerText='Done';
+    // or...
+    alert("You're out of time!");
+    quiz.innerHTML = `
+           <h2>You answered ${score}/${quizData.length} questions correctly</h2>
+            <button onclick="location.reload()">See Results</button> 
+           `
+  }
+}, 1000);
+
+
+    pageNum.innerText = currentQuizData.page
     questionEl.innerText = currentQuizData.question
     a_text.innerText = currentQuizData.a
     b_text.innerText = currentQuizData.b
@@ -65,7 +94,7 @@ function getSelected() {
     })
     return answer
 }
-submitBtn.addEventListener('click', () => {
+submit_button.addEventListener('click', () => {
     const answer = getSelected()
     if(answer) {
        if(answer === quizData[currentQuiz].correct) {
@@ -77,7 +106,8 @@ submitBtn.addEventListener('click', () => {
        } else {
            quiz.innerHTML = `
            <h2>You answered ${score}/${quizData.length} questions correctly</h2>
-           <button onclick="location.reload()">Reload</button>
+            <button onclick="location.reload()">See Results</button> 
+           `
        }
     }
 })

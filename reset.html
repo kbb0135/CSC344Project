@@ -53,9 +53,8 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 document.getElementById('confirm').addEventListener('click',function(){
     var email = document.getElementById('email').value;
-    sendPasswordResetEmail(auth, email)
-    console.log("test1");
-  .then(() => {
+    sendPasswordResetEmail(auth, email).then(() => {
+  
     alert("Email Sent");
     window.location.assign("login.html");
   })

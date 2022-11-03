@@ -1,7 +1,7 @@
 
 export const quizData = [
     {
-        // count: " ",
+        count: " ",
         page: "1/4",
         question: "What does HTML stand for?",
         a: "Hyper Text Markup Language",
@@ -11,7 +11,7 @@ export const quizData = [
         correct: "a",
     },
     {
-
+        count: " ",
         page: "2/4",
         question: "What is the <h1> element used for?",
         a: "Create a Home Page",
@@ -50,24 +50,26 @@ const d_text = document.getElementById('d_text')
 const submit_button = document.getElementById('submit')
 let currentQuiz = 0
 export let score = 0
+const wrongANS = []
 
 // const timer = document.getElementById('count')
 
 
 // const timer = document.getElementById('count')
-
 
 loadQuiz()
 function loadQuiz() {
     deselectAnswers()
     const currentQuizData = quizData[currentQuiz]
 
-    var count = 10;
-var interval = setInterval(function(){
-  document.getElementById('count').innerText=count;
-  count--;
-  if (count === 0){
-    clearInterval(interval);
+    var count = 30000000;
+    var interval = setInterval(function(){
+    document.getElementById('count').innerText=count;
+    count--;
+    if (count === 0){
+        ``
+        // clearInterval(interval);
+
     // document.getElementById('count').innerText='Done';
     // or...
     alert("You're out of time!");
@@ -75,10 +77,9 @@ var interval = setInterval(function(){
            <h2>You answered ${score}/${quizData.length} questions correctly</h2>
             <button onclick="location.reload()">See Results</button> 
            `
-  }
+    }
 }, 1000);
-
-
+    
     pageNum.innerText = currentQuizData.page
     questionEl.innerText = currentQuizData.question
     a_text.innerText = currentQuizData.a
@@ -99,26 +100,31 @@ function getSelected() {
     return answer
 }
 submit_button.addEventListener('click', () => {
+    alert("test 123")
     const answer = getSelected()
     if(answer) {
        if(answer === quizData[currentQuiz].correct) {
            score++
        }
+       else {
+            wrongANS==quizData.[currentQuiz]
+       }
        currentQuiz++
        if(currentQuiz < quizData.length) {
            loadQuiz()
+
        } else {
            quiz.innerHTML = `
            <h2>You answered ${score}/${quizData.length} questions correctly</h2>
             <button onclick="location.reload()">See Results</button> 
-           `
-           
+           ` 
        }
     }
 })
 console.log(score,"This is the score")
 export let score1 = score;
-
+alert("Pass1");
+console.log(wrongANS);
 
     
     // TODO: Add SDKs for Firebase products that you want to use

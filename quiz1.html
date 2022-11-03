@@ -70,8 +70,7 @@ const firebaseConfig = {
     messagingSenderId: "1052775979865",
     appId: "1:1052775979865:web:b8de5ba5d832e93b18ca48"
   };
-  
-console.log(score1);
+
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 const dbRef = ref(getDatabase());
@@ -90,6 +89,7 @@ onAuthStateChanged(auth, (user) => {
         let score2 = score1;
         document.getElementById('submit').addEventListener('click', function(){
             alert("Test1");
+            console.log("Hello")
             //console.log("Adb")
         
             update(ref(database, 'users/'+user.uid),{

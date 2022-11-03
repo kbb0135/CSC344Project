@@ -46,29 +46,32 @@
         </div>
 
         
-        <button id="submit"> Submit</button>
+        <button id='submit'> Submit</button>
         <a href = "home.html" class = "back">Back to Home</a>
 
     </div>
 
-    <script src="quiz1.js"></script>
+    <script type = module src="quiz1.js"></script>
     
 
 </body>
 <script type = "module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-app.js";
-import { getDatabase,set, ref,update, child, get,push} from "https://www.gstatic.com/firebasejs/9.12.1/firebase-database.js";
-import { getAuth, signInWithEmailAndPassword,onAuthStateChanged, signOut} from "https://www.gstatic.com/firebasejs/9.12.1/firebase-auth.js";
+import {quizData} from '/quiz1.js';
+import {score1} from '/quiz1.js';
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js";
+import { getDatabase,set, ref,update, child, get,push} from "https://www.gstatic.com/firebasejs/9.13.0/firebase-database.js";
+import { getAuth, signInWithEmailAndPassword,onAuthStateChanged, signOut} from "https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js";
 const firebaseConfig = {
-      apiKey: "AIzaSyBTwiCAygR2JDHybOVye84f-edq5RB1bhg",
-      authDomain: "signuplogin-386ba.firebaseapp.com",
-      databaseURL: "https://signuplogin-386ba-default-rtdb.firebaseio.com",
-      projectId: "signuplogin-386ba",
-      storageBucket: "signuplogin-386ba.appspot.com",
-      messagingSenderId: "1004890798066",
-      appId: "1:1004890798066:web:83912465d7cf11e2e59d6b"
-    };
-
+    apiKey: "AIzaSyD4pas0pvQQovr1vpT5QlBYWR_1OthDUEI",
+    authDomain: "dataapp-8bc6d.firebaseapp.com",
+    databaseURL: "https://dataapp-8bc6d-default-rtdb.firebaseio.com",
+    projectId: "dataapp-8bc6d",
+    storageBucket: "dataapp-8bc6d.appspot.com",
+    messagingSenderId: "1052775979865",
+    appId: "1:1052775979865:web:b8de5ba5d832e93b18ca48"
+  };
+  
+console.log(score1);
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 const dbRef = ref(getDatabase());
@@ -79,39 +82,22 @@ onAuthStateChanged(auth, (user) => {
         var b = document.getElementById('b').value;
         var c = document.getElementById('c').value;
         var d = document.getElementById('d').value;
-    
-
+       // var submit = document.getElementById('submit').value;
     const uid = user.uid;
     if(user) {
+        const question = quizData;
+        console.log(question);
+        let score2 = score1;
         document.getElementById('submit').addEventListener('click', function(){
             alert("Test1");
             //console.log("Adb")
-  function writeNewPost(uid, a, b, c, d) {
-  const db = getDatabase();
-  alert("Test2");
-
-  // A post entry.
-  const postData = {
-            q1:a,
-            q2:b,
-            q3:c,
-            q4:d
-  };
-
-
-  // Get a key for a new Post.
-  const newPostKey = push(child(ref(db), 'posts')).key;
-
-  // Write the new post's data simultaneously in the posts list and the user's post list.
-  const updates = {};
-  //updates['/posts/' + newPostKey] = postData;
-  updates['/user-posts/' + uid + '/' + newPostKey] = postData;
-
-  return update(ref(db), updates);
-  console.log("Test");
-}
-writeNewPost(uid,a,b,c,d);
+        
+            update(ref(database, 'users/'+user.uid),{
+                Quiz: question,
+                score: score2
+            })
 console.log("test3");
+//console.log(score1);
 })
         
 }

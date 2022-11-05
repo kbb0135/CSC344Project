@@ -100,7 +100,7 @@ onAuthStateChanged(auth, (user) => {
         console.log(question);
         document.getElementById('submit').addEventListener('click', function(){
             //alert("Test1");
-            //alert(score);
+            alert(score);
             //console.log("Adb")
         
             update(ref(database, 'users/'+user.uid),{

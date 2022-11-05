@@ -46,21 +46,15 @@ crossorigin="anonymous" />
 
             </div> -->
             
-            <!-- <div class="form-control"> 
+            <div class="form-control"> 
                 <p>Password</p>
                 <input type="password" name="" id="password" placeholder="Enter Password" autocomplete="off">
-                <i class="fas fa-check-circle"></i>
-                <i class="fas fa-exclamation-circle"></i>
-                <small>Error Message</small> --->
-            <!-- </div> --> 
+            </div> 
 
-            <!-- <div class="form-control"> 
+            <div class="form-control"> 
                 <p>Confirm Password</p>
                 <input type="password" name="" id="cpassword" placeholder="Confirm Password" autocomplete="off">
-             <i class="fas fa-check-circle"></i>
-                <i class="fas fa-exclamation-circle"></i>
-                <small>Error Message</small>-->
-            <!-- </div> --> 
+             </div> 
 
             <div id ="button_container">
                <h2 id ='update' >Update Changes</h2>
@@ -78,7 +72,7 @@ crossorigin="anonymous" />
 <script type = "module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js";
     import { getDatabase,set, ref,update, child, get } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-database.js";
-    import { getAuth, signInWithEmailAndPassword,onAuthStateChanged, signOut} from "https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js";
+    import { getAuth, signInWithEmailAndPassword,onAuthStateChanged, signOut, updatePassword} from "https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js";
     // TODO: Add SDKs for Firebase products that you want to use
     // https://firebase.google.com/docs/web/setup#available-libraries
   
@@ -137,12 +131,29 @@ onAuthStateChanged(auth, (user) => {
                 alert("The name should only contain alphabet");
                 return false;
         }
+
+        const password = document.getElementById('password').value;
+        const cpassword = document.getElementById('cpassword').value;
+        if(password != cpassword) {
+          alert("Password and Confirmation Password Didn't Match");
+          return false;
+        }
+        updatePassword(user, password).then(() => {
+        console.log("Password Updated");
+    }).catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          alert(errorMessage);
+  // ...
+    });
+
         const dt = new Date();
             update(ref(database, 'users/'+user.uid),{
                 firstname:firstname,
                 lastname:lastname,
                 ProfileUpdated: dt
             })
+        
 alert("User Profile Updated");
 //console.log(score1);
 })

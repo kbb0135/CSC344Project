@@ -34,7 +34,7 @@
                 <div class = "dropdown1">
                     <button onclick="myFunction1()" class = "setting">Settings</button>
                     <div id = "myDropdown1" class="dropdown-content1">
-                        <a href = "home.html" class = "DarkMode">User Preference</a>
+                        <h2 id = 'userPreference'>User Preference</h2>
                         <h2 id = 'logout'>Logout</h2>
                     </div>
                 </div>
@@ -124,6 +124,12 @@ onAuthStateChanged(auth, (user) => {
 }).catch((error) => {
   console.error(error);
 });
+
+
+document.getElementById('userPreference').addEventListener('click',function(){
+    window.location = "userPreferences.html"
+});
+
 document.getElementById('logout').addEventListener('click',function(){
     signOut(auth).then(() => {
         //alert(user.firstname);
@@ -140,6 +146,9 @@ document.getElementById('logout').addEventListener('click',function(){
     // ...
   } 
   else {
+    document.getElementById('userPreference').addEventListener('click',function(){
+        alert("User not logged in");
+    })
     document.getElementById('logout').addEventListener('click',function(){
         alert("User not logged in");
     })

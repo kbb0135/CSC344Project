@@ -65,6 +65,7 @@ function loadQuiz() {
 
     var count = 30000000;
     var interval = setInterval(function(){
+    console.log("test...............")
     document.getElementById('count').innerText=count;
     count--;
     if (count === 0){

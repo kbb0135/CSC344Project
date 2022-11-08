@@ -51,6 +51,7 @@ const submit_button = document.getElementById('submit')
 let currentQuiz = 0
 export let score = 0
 const wrongANS = []
+//export let check = 12;
 
 // const timer = document.getElementById('count')
 
@@ -100,7 +101,7 @@ function getSelected() {
     return answer
 }
 submit_button.addEventListener('click', () => {
-    // alert("test 123")
+    //alert("test 123")
     const answer = getSelected()
     if(answer) {
        if(answer === quizData[currentQuiz].correct) {
@@ -127,9 +128,9 @@ submit_button.addEventListener('click', () => {
     
 })
 console.log(score,"This is the score")
-export let score1 = score;
-// alert("Pass1");
-console.log(wrongANS);
+//export let score1 = score;
+//alert("Pass1");
+//console.log(wrongANS);
 
     
     // TODO: Add SDKs for Firebase products that you want to use

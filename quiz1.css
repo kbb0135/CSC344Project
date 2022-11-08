@@ -21,6 +21,11 @@ body{
     width: 600px;
     overflow: hidden;
   }
+  h5{
+    padding: 1rem;
+    text-align: right;
+    margin: 0;
+  }
   .quiz-header{
     padding: 4rem;
   }

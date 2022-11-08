@@ -7,26 +7,19 @@
    
 }
 
-
-
-
-body{
-    font-family:ubuntu;
+  
+.blog_1{
+    margin-left: 90px;
+    margin-right: 90px;
 }
-body{
-    background-color:var(--primary-color);
-    z-index: 1;
-    background:linear-gradient(-45deg,#b8c6db);
-    background-size: 400% 400%;
-    width:100%;
-    height:100vh;
- }
-
-.button_container{
-    margin-left: 1200px;
-    cursor:pointer;
+.image{
+    margin-left: 180px;
+    margin-top: 65px;
 }
-
+.next{
+    margin-left: 5000px;
+    margin-bottom:60px;
+}
 .header h1{
     color: rgb(70, 242, 70);
     text-align:  center;
@@ -43,32 +36,9 @@ body{
     font-size:19px;
 }
 
-.image{
-  
-  height: 500px;
-  width:800px;
-  position:relative;
-  margin-left:200px;
-  margin-top:60px;
-}
-.image{
-    width:100%;
-    height:100%;
-}
-.image2{
-    border: 10px solid;
-}
-.video{
-    height:350px;
-    width:550px;
-    margin-left: 150px;
-    border: 10px solid;
-    border-color: rgb(255, 244, 240);
-    
-}
 .uses h2{
     color: var(--secondary-color);
-    margin-left: 160px;
+    margin-left: 180px;
     margin-top: 30px;
 }
 
@@ -78,3 +48,4 @@ body{
     font-size:19px;
 
 }
+

@@ -100,30 +100,35 @@ function getSelected() {
     return answer
 }
 submit_button.addEventListener('click', () => {
-    alert("test 123")
+    // alert("test 123")
     const answer = getSelected()
     if(answer) {
        if(answer === quizData[currentQuiz].correct) {
            score++
+           
        }
-       else {
-            wrongANS==quizData.[currentQuiz]
-       }
+    //    else {
+    //         wrongANS==quizData.[currentQuiz]
+    //    }
        currentQuiz++
+       
        if(currentQuiz < quizData.length) {
            loadQuiz()
 
        } else {
            quiz.innerHTML = `
            <h2>You answered ${score}/${quizData.length} questions correctly</h2>
-            <button onclick="location.reload()">See Results</button> 
+            <button onclick="location.reload()">See Results</button>
+            <button onclick="location.home.html"> Home </button>
            ` 
        }
+       
     }
+    
 })
 console.log(score,"This is the score")
 export let score1 = score;
-alert("Pass1");
+// alert("Pass1");
 console.log(wrongANS);
 
     

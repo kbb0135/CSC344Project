@@ -7,5 +7,5 @@ function start(i){
         requestAnimationFrame(startProgress);
 
         var progress = 0;
-        var random  = parseInt(Math.random()*100);
+        var random  = parseInt(Math.()*100);
 }

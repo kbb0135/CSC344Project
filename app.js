@@ -8,7 +8,7 @@ menu.addEventListener('click',function() {
 function myFunction() { 
     document.getElementById("DropDown").classList.toggle("show");
 }
-windows.onclick = function(event) {
+window.onclick = function(event) {
     if(!event.target.matches('.dropbtn')) {
         var dropdowns = document.getElementsByClassName("dropdown-conetent");
         var i;
@@ -25,6 +25,7 @@ toggle between hiding and showing the dropdown content */
 function myFunction1() {
     document.getElementById("myDropdown1").classList.toggle("show");
   }
+  
   
   // Close the dropdown if the user clicks outside of it
   window.onclick = function(event) {

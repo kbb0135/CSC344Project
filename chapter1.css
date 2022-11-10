@@ -7,7 +7,38 @@
    
 }
 
-  
+
+
+
+/*next and Previous buttton*/
+.nextprev a.w3-right, .nextprev a.w3-left {
+    background-color: #04AA6D;
+    color: #ffffff;
+    border-color: #04AA6D;
+}
+.nextprev a {
+    font-size: 18px;
+    font-family: 'Source Sans Pro', sans-serif;
+    padding-left: 19px;
+    padding-right: 19px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+}
+.ws-btn {
+    display: inline-block;
+    padding: 6px 18px;
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none; 
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+}
+.w3-right {
+    float: right!important;
+}
+
+/*Template*/
 .blog_1{
     margin-left: 90px;
     margin-right: 90px;

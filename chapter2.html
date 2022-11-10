@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 1</title>
+    <link rel="stylesheet" href="chapter1.css">
+    <link rel="stylesheet" href="styleHome.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="chapter1.css">
+    <link rel="stylesheet" href="styleHome.css">
+</head>
+
+<body>
+
+
+
+    <!-- gggg -->
+    <!-- Content for chapter title -->
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="/" id="navbar__logo"><i class="fa-solid fa-laptop-code"></i>Code-HTML</a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <!--Home Menu Function-->
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="home.html" class="navbar__links">Home</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="home.html" class="navbar__links">FlashCard</a>
+                </li>
+                <li class="navbar__btn">
+                    <a href="quiz1.html" class="button">Quizzes</a>
+                </li>
+                <li class="navbar__btn">
+                    <a href="home.html" class="button">Progress Report</a>
+                </li>
+                <li class="navbar__btn">
+                    <div class="dropdown1">
+                        <button onclick="myFunction1()" class="setting">Settings</button>
+                        <div id="myDropdown1" class="dropdown-content1">
+                            <h5 id = 'userPreference'>User Preference</h5>
+                            <h5 id = 'logout'>Logout</h5>
+                        </div>
+                    </div>
+                </li>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button onclick="//" class="setting">Search</button>
+                </form>
+
+            </ul>
+    </nav>
+
+    <!---Creation of chapters Continued--->
+
+    <div class="Chapter_Content">
+        <button onclick="myFunction()" class="dropbtn">Chapter</button>
+        <div id="DropDown" class="dropdown-content">
+            <a href="chapter1.html" class="chapter">Chapter 1</a><br>
+            <a href="chapter2.html" class="chapter">Chapter 2</a><br>
+            <a href="chapter3.html" class="chapter">Chapter 3</a><br>
+            <a href="chapter4.html" class="chapter">Chapter 4</a><br>
+            <a href="chapter5.html" class="chapter">Chapter 5</a><br>
+            <a href="chapter6.html" class="chapter">Chapter 6</a><br>
+
+        </div>
+    </div>
+
+
+    <div class="header">
+        <h1>Chapter One</h1>
+        <h2> Introduction to HTML</h2>
+        <li>HTML stands for Hyper Text Markup Language. </li>
+        <li> HTML is used for creating web pages through different HTML elements.</li>
+        <li>HTML has many tags used to define different elements.</li>
+
+        <div class="blog_1 my-5">
+            <div class="row mb-2">
+                <div class="col-md-6">
+                    <div
+                        class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                        <div class="col p-4 d-flex flex-column position-static">
+                            <strong class="d-inline-block mb-2 text-primary">A sample HTML Document.</strong>
+                            <h3 class="mb-0">Featured post</h3>
+                            <div class="mb-1 text-muted">Nov 12</div>
+                            <p class="card-text mb-auto">This is a wider card with supporting text below as a natural
+                                lead-in to additional content.</p>
+                            <a href="images/basic_html.jpg" class="stretched-link">View Image</a>
+                        </div>
+                        <div class="col-auto d-none d-lg-block">
+                            <img class="bd-placeholder-img" width="300" height="390" src="images/basic_html.jpg" alt="">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div
+                        class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                        <div class="col p-4 d-flex flex-column position-static">
+                            <strong class="d-inline-block mb-2 text-success">Web-Design</strong>
+                            <h3 class="mb-0">Helpful Video</h3>
+                            <div class="mb-1 text-muted">Nov 11</div>
+                            <p class="mb-auto">This is a wider card with supporting text below as a natural lead-in to
+                                additional content.</p>
+                            <a href="https://www.youtube.com/embed/rOPKC49gTkk" class="stretched-link">Watch Video</a>
+                        </div>
+                        <div class="col-auto d-none d-lg-block">
+                            <iframe width="440" height="395" src="https://www.youtube.com/embed/rOPKC49gTkk"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="uses">
+                <h2> Uses of basic HTML tags:</h2>
+                <li>head: The head cretes the title and allows to use CSS file.</li>
+                <li>body: Helps to create all the content in the website.</li>
+                <li>h1: Creates heading for the web page.</li>
+                <li>p: Creates paragraph for the webpage.</li>
+                <li>li: Defines a list item.</li>
+                <li>ol: Creates ordered list.</li>
+                <li>ul: Creates unordered list.</li>
+                <li>a: has many tags used to define different elements.</li>
+            </div>
+          
+            <div class="w3-clear nextprev">
+                <a class="w3-left ws-btn" href="howto_css_button_split.asp">❮ Previous</a>
+                <a class="w3-right ws-btn" href="chapter2.html">Next ❯</a>
+             </div>
+           
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+                crossorigin="anonymous"></script>
+            <script src="app.js"></script>
+</body>
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js";
+    import { getDatabase,set, ref,update, child, get } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-database.js";
+    import { getAuth, signInWithEmailAndPassword,onAuthStateChanged, signOut} from "https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+    apiKey: "AIzaSyD4pas0pvQQovr1vpT5QlBYWR_1OthDUEI",
+    authDomain: "dataapp-8bc6d.firebaseapp.com",
+    databaseURL: "https://dataapp-8bc6d-default-rtdb.firebaseio.com",
+    projectId: "dataapp-8bc6d",
+    storageBucket: "dataapp-8bc6d.appspot.com",
+    messagingSenderId: "1052775979865",
+    appId: "1:1052775979865:web:b8de5ba5d832e93b18ca48"
+  };
+    
+const app = initializeApp(firebaseConfig);
+const database = getDatabase(app);
+const dbRef = ref(getDatabase());
+const auth = getAuth();
+onAuthStateChanged(auth, (user) => {
+
+  if (user) {
+    // User is signed in, see docs for a list of available properties
+    // https://firebase.google.com/docs/reference/js/firebase.User
+     const uid = user.uid;
+    //     console.log("test1");
+    //     console.log(uid);
+    //     const firstname = user.displayName;
+    //     console.log(firstname);
+
+        get(child(dbRef, `users/${uid}`)).then((snapshot) => {
+  if (snapshot.exists()) {
+    console.log(snapshot.val());
+  } else {
+    console.log("No data available");
+  }
+}).catch((error) => {
+  console.error(error);
+});
+
+
+document.getElementById('userPreference').addEventListener('click',function(){
+    window.location = "userPreferences.html"
+});
+
+document.getElementById('logout').addEventListener('click',function(){
+    signOut(auth).then(() => {
+        //alert(user.firstname);
+    var currentUser = JSON.parse(sessionStorage.getItem('user'));
+
+    sessionStorage.removeItem('user');
+  alert("Sign-out successful");
+
+  window.location = "login.html";
+}).catch((error) => {
+  alert("Something Went wrong");
+});
+});
+    // ...
+  } 
+  else {
+    document.getElementById('userPreference').addEventListener('click',function(){
+        alert("User not logged in");
+    })
+    document.getElementById('logout').addEventListener('click',function(){
+        alert("User not logged in");
+    })
+  }
+});
+
+
+</script>
+
+</html>

@@ -48,6 +48,7 @@ const b_text = document.getElementById('b_text')
 const c_text = document.getElementById('c_text')
 const d_text = document.getElementById('d_text')
 const submit_button = document.getElementById('submit')
+const home_button = document.getElementById('home')
 let currentQuiz = 0
 export let score = 0
 const wrongANS = []
@@ -57,6 +58,22 @@ const wrongANS = []
 
 
 // const timer = document.getElementById('count')
+
+// home_button.addEventListener('click', () => {
+//     if (window.confirm("The progress will be lost. Do you really want to leave?")) {
+//         window.open('http://127.0.0.1:5500/home.html', "Thanks for Visiting!");
+//       }    
+// })
+
+home_button.addEventListener("click", function( e ){ //e => event
+    if( ! confirm("All progress will be lost. Are you sure?") ){
+        e.preventDefault(); // ! => don't want to do this
+    } else {
+        //want to do this! => maybe do something about it?
+        window.open('http://127.0.0.1:5500/home.html', "Thanks for Visiting!");
+        // alert('Ok, lets do this!');
+    }
+});
 
 loadQuiz()
 function loadQuiz() {
@@ -120,8 +137,8 @@ submit_button.addEventListener('click', () => {
        } else {
            quiz.innerHTML = `
            <h2>You answered ${score}/${quizData.length} questions correctly</h2>
-            <button onclick="location.reload()">See Results</button>
-            <button onclick="location.home.html"> Home </button>
+            <button onclick="location.reload()">Retake Quiz</button>
+            <button onclick="window.location.assign(home.html)> Home </button>
            ` 
        }
        

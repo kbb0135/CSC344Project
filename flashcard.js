@@ -1,11 +1,11 @@
-var contentArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
+var contentArray = sessionStorage.getItem('items') ? JSON.parse(sessionStorage.getItem('items')) : [];
 
 document.getElementById("save_card").addEventListener("click", () => {
   addFlashcard();
 });
 
 document.getElementById("delete_cards").addEventListener("click", () => {
-  localStorage.clear();
+  sessionStorage.clear();
   flashcards.innerHTML = '';
   contentArray = [];
 });
@@ -35,7 +35,7 @@ flashcardMaker = (text, delThisIndex) => {
   del.className = "fas fa-minus";
   del.addEventListener("click", () => {
     contentArray.splice(delThisIndex, 1);
-    localStorage.setItem('items', JSON.stringify(contentArray));
+    sessionStorage.setItem('items', JSON.stringify(contentArray));
     window.location.reload();
   })
 
@@ -65,7 +65,7 @@ addFlashcard = () => {
   }
 
   contentArray.push(flashcard_info);
-  localStorage.setItem('items', JSON.stringify(contentArray));
+  sessionStorage.setItem('items', JSON.stringify(contentArray));
   flashcardMaker(contentArray[contentArray.length - 1], contentArray.length - 1);
   question.value = "";
   answer.value = "";

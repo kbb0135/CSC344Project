@@ -65,6 +65,7 @@ function loadQuiz() {
 
     var count = 30000000;
     var interval = setInterval(function(){
+    console.log("test...............")
     document.getElementById('count').innerText=count;
     count--;
     if (count === 0){
@@ -106,21 +107,26 @@ submit_button.addEventListener('click', () => {
     if(answer) {
        if(answer === quizData[currentQuiz].correct) {
            score++
+           
        }
     //    else {
     //         wrongANS==quizData.[currentQuiz]
     //    }
        currentQuiz++
+       
        if(currentQuiz < quizData.length) {
            loadQuiz()
 
        } else {
            quiz.innerHTML = `
            <h2>You answered ${score}/${quizData.length} questions correctly</h2>
-            <button onclick="location.reload()">See Results</button> 
+            <button onclick="location.reload()">See Results</button>
+            <button onclick="location.home.html"> Home </button>
            ` 
        }
+       
     }
+    
 })
 console.log(score,"This is the score")
 //export let score1 = score;

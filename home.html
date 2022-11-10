@@ -10,7 +10,7 @@
 <body>
     <nav class = "navbar">
         <div class = "navbar__container">
-            <a href="home.html" id="navbar__logo"><i class = "fa-solid fa-laptop-code"></i>Code-HTML</a>
+            <a href="/" id="navbar__logo"><i class = "fa-solid fa-laptop-code"></i>Code-HTML</a>
             <div class = "navbar__toggle" id="mobile-menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -22,11 +22,20 @@
                 <a href="home.html" class = "navbar__links">Home</a>
             </li>
             <li class = "navbar__item">
-                <a href="home.html" class = "navbar__links">FlashCard</a>
+                <a href="flashcard.html" class = "navbar__links">FlashCard</a>
             </li>
-            <li class = "navbar__btn">
-                <a href="quiz1.html" class = "button">Quizzes</a> 
-            </li>
+            <div class = "Chapter_Content">
+                <button onclick="myFunction2()" class = "button">Quizzes</button>
+                <div id = "myDropdown2" class = "dropdown-content">
+                    <a href="quiz1.html" class = "chapter">Quiz 1</a><br>
+                    <a href="\" class = "chapter">Quiz 2</a><br>
+                    <a href="\" class = "chapter">Quiz 3</a><br>
+                    <a href="\" class = "chapter">Quiz 4</a><br>
+                    <a href="\" class = "chapter">Quiz 5</a><br>
+                    <a href="\" class = "chapter">Quiz 6</a><br>
+                </div>
+                
+            </div>
             <li class = "navbar__btn">
                 <a href="home.html" class = "button">Progress Report</a>
             </li>
@@ -34,8 +43,8 @@
                 <div class = "dropdown1">
                     <button onclick="myFunction1()" class = "setting">Settings</button>
                     <div id = "myDropdown1" class="dropdown-content1">
-                        <h2 id = 'userPreference'>User Preference</h2>
-                        <h2 id = 'logout'>Logout</h2>
+                        <h4 id = 'userPreference' class = "button">User Preference</h4>
+                        <h4 id = 'logout' class = "button">Logout</h4>
                     </div>
                 </div>
             </li>

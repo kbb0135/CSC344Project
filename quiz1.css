@@ -22,7 +22,7 @@ body{
     overflow: hidden;
   }
   h5{
-    padding: 1rem;
+    /* padding: 1rem; */
     text-align: right;
     margin: 0;
   }
@@ -46,7 +46,7 @@ body{
     cursor: pointer;
   }
   button{
-    background-color: rgb(87, 184, 222);
+    background-color: #44b927;
     color: #fff;
     border: none;
     display: block;
@@ -57,18 +57,19 @@ body{
     padding: 1.3rem;
   }
   button:hover{
-    background-color: #44b927;
+    background-color: rgb(87, 184, 222);
   }
   /* //#04adc4  #03cae4*/
   button:focus{
     outline: none;
     background-color: #44b927;
   }
-  .back a{
+  .back {
     display: flex;
     text-decoration: none;
-    color: red;
-    padding-left: 12px;
+    color: #44b927;
+    padding-bottom: 1rem;
+    /* font-size: 15; */
   }
   .back a:hover {
     cursor: pointer;

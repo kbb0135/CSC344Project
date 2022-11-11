@@ -1,7 +1,25 @@
+//import {quizData} from '/quiz1.js';
+//import {score} from '/quiz1.js';
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js";
+import { getDatabase,set, ref,update, child, get,push} from "https://www.gstatic.com/firebasejs/9.13.0/firebase-database.js";
+import { getAuth, signInWithEmailAndPassword,onAuthStateChanged, signOut} from "https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js";
+const firebaseConfig = {
+    apiKey: "AIzaSyD4pas0pvQQovr1vpT5QlBYWR_1OthDUEI",
+    authDomain: "dataapp-8bc6d.firebaseapp.com",
+    databaseURL: "https://dataapp-8bc6d-default-rtdb.firebaseio.com",
+    projectId: "dataapp-8bc6d",
+    storageBucket: "dataapp-8bc6d.appspot.com",
+    messagingSenderId: "1052775979865",
+    appId: "1:1052775979865:web:b8de5ba5d832e93b18ca48"
+  };
 
-export const quizData = [
+const app = initializeApp(firebaseConfig);
+const database = getDatabase(app);
+const dbRef = ref(getDatabase());
+const auth = getAuth();
+const quizData = [
     {
-        count: " ",
+        //count: " ",
         page: "1/4",
         question: "What does HTML stand for?",
         a: "Hyper Text Markup Language",
@@ -11,7 +29,7 @@ export const quizData = [
         correct: "a",
     },
     {
-        count: " ",
+        //count: " ",
         page: "2/4",
         question: "What is the <h1> element used for?",
         a: "Create a Home Page",
@@ -50,7 +68,7 @@ const d_text = document.getElementById('d_text')
 const submit_button = document.getElementById('submit')
 const home_button = document.getElementById('home')
 let currentQuiz = 0
-export let score = 0
+let score = 0
 const wrongANS = []
 //export let check = 12;
 
@@ -83,6 +101,10 @@ function loadQuiz() {
     var count = 300000;
     var interval = setInterval(function(){
     console.log("test...............")
+    if(document.getElementById('count').innerText=count == null) {
+        alert("Here");
+        count =0;
+    }
     document.getElementById('count').innerText=count;
     count--;
     if (count === 0){
@@ -135,6 +157,7 @@ submit_button.addEventListener('click', () => {
            loadQuiz()
 
        } else {
+        
            quiz.innerHTML = `
            <h2>You answered ${score}/${quizData.length} questions correctly</h2>
             <button onclick="location.reload()">Retake Quiz</button>
@@ -143,16 +166,30 @@ submit_button.addEventListener('click', () => {
        }
        
     }
-    
 })
-console.log(score,"This is the score")
-//export let score1 = score;
-//alert("Pass1");
-//console.log(wrongANS);
-
-    
-    // TODO: Add SDKs for Firebase products that you want to use
-    // https://firebase.google.com/docs/web/setup#available-libraries
-  
-    // Your web app's Firebase configuration
-    
+onAuthStateChanged(auth, (user) => {
+    // const user = userCredential.user;
+        var a = document.getElementById('a').value;
+        var b = document.getElementById('b').value;
+        var c = document.getElementById('c').value;
+        var d = document.getElementById('d').value;
+       // var submit = document.getElementById('submit').value;
+    const uid = user.uid;
+    if(user) {
+        const question = quizData;
+        console.log(question);
+        document.getElementById('submit').addEventListener('click', function(){
+            //alert("Test1");
+            //alert(score);
+            //console.log("Adb")
+        
+            update(ref(database, 'users/'+user.uid),{
+                Quiz: question,
+                score: score
+            })
+//console.log("test3");
+//console.log(score1);
+})
+        
+}
+})

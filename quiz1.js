@@ -88,7 +88,7 @@ home_button.addEventListener("click", function( e ){ //e => event
         e.preventDefault(); // ! => don't want to do this
     } else {
         //want to do this! => maybe do something about it?
-        window.open('http://127.0.0.1:5500/home.html', "Thanks for Visiting!");
+        window.location.assign("home.html");
         // alert('Ok, lets do this!');
     }
 });

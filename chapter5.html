@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 5</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="chapter1.css">
+
+</head>
+
+<body>
+
+    <!--nav-bar-->
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="chapter1.html">Code-HTML</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav mx-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+
+                    <!--Home Feature-->
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+                    </li>
+                    <!---Chapter Feature-->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Chapters
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="chapter1.html">Chapter 1</a></li>
+                            <li><a class="dropdown-item" href="chapter2.html">Chapter 2</a></li>
+                            <li><a class="dropdown-item" href="chapter3.html">Chapter 3</a></li>
+                            <li><a class="dropdown-item" href="chapter4.html">Chapter 4</a></li>
+                            <li><a class="dropdown-item" href="chapter5.html">Chapter 5</a></li>
+                        </ul>
+                    </li>
+                    <!--Flashcards-->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Flashcards
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="flashcard.html">Flashcard 1</a></li>
+                            <li><a class="dropdown-item" href="flashcard.html">Flashcard 2</a></li>
+                            <li><a class="dropdown-item" href="flashcard.html">Flashcard 3</a></li>
+                            <li><a class="dropdown-item" href="flashcard.html">Flashcard 4</a></li>
+                            <li><a class="dropdown-item" href="flashcard.html">Flashcard 5</a></li>
+                        </ul>
+                    </li>
+                    <!--Quizzes-->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Quizzes
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="quiz1.html">Quiz 1</a></li>
+                            <li><a class="dropdown-item" href="quiz2.html">Quiz 2</a></li>
+                            <li><a class="dropdown-item" href="quiz3.html">Quiz 3</a></li>
+                            <li><a class="dropdown-item" href="quiz4.html">Quiz 4</a></li>
+                            <li><a class="dropdown-item" href="quiz5.html">Quiz 5</a></li>
+                        </ul>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="progressbar.html">Progress Report</a>
+                    </li>
+                    <!--Settings-->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Settings
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="" id='userPreference'>User Preferences</a></li>
+                            <li><a class="dropdown-item" href="" id='userPreference'>Dark Mode</a></li>
+                           
+                            <li><a class="dropdown-item" href="" id='logout'>LogOut</a></li>
+
+                        </ul>
+                    </li>
+
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="heading">
+        <h1>Chapter Five</h1>
+        <h2> Introduction to HTML Forms and Attributes</h2>
+        <li>An HTML form is used to collect user input.</li>
+        <li>The "form" element is a container for different types of input elements such as: text fields, checkboxes, radio buttons, submit buttons, etc.</li>
+        <li>The "action" attribute in form defines the action to be performed when the form is submitted.</li>
+
+        <div class="blog_1 my-5">
+            <div class="row mb-2">
+                <div class="col-md-6">
+                    <div
+                        class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                        <div class="col p-4 d-flex flex-column position-static">
+                            <strong class="d-inline-block mb-2 text-primary">A sample HTML Document.</strong>
+                            <h3 class="mb-0">Featured post</h3>
+                            <div class="mb-1 text-muted">Nov 12</div>
+                            <p class="card-text mb-auto">This is a wider card with supporting text below as a natural
+                                lead-in to additional content.</p>
+                            <a href="images/forms.jpg" class="stretched-link">View Image</a>
+                        </div>
+                        <div class="col-auto d-none d-lg-block">
+                            <img class="bd-placeholder-img" width="420" height="390" src="images/forms.jpg" alt="">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div
+                        class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                        <div class="col p-4 d-flex flex-column position-static">
+                            <strong class="d-inline-block mb-2 text-success">Web-Design</strong>
+                            <h3 class="mb-0">Helpful Video</h3>
+                            <div class="mb-1 text-muted">Nov 11</div>
+                            <p class="mb-auto">This is a wider card with supporting text below as a natural lead-in to
+                                additional content.</p>
+                            <a href="https://www.youtube.com/embed/rOPKC49gTkk" class="stretched-link">Watch Video</a>
+                        </div>
+                        <div class="col-auto d-none d-lg-block">
+                            <iframe width="440" height="395" src="https://www.youtube.com/embed/rOPKC49gTkk"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="uses">
+                <h2> Uses of basic HTML forms and attributes:</h2>
+                <li>The "action" scripts prepares or makes ready to process the passed data.</li>
+                <li>There are different types of form controls that can be used to collect data such as: Text Input Controls, Select Box Controls, Clickable Buttons, and Submit/Reset Buttons.</li>
+                <li>The "type" attribute indicates the type of input control.</li>
+                <li>The "name" attribute is used to give a name to the contol which is sent to the server to be recognized.</li>
+                <li>The "size" allows to specify the width of the text-input control in terms of characters.</li>
+                <li>The "maxlength" attribute allows to specify the maximum numbers of characters a user can enter in a text box.</li>
+                
+            </div>
+
+            <div class="w3-clear nextprev">
+                <a class="w3-left ws-btn" href="chapter4.html">❮ Previous</a>
+              
+            </div>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+                crossorigin="anonymous"></script>
+            <script src="app.js"></script>
+</body>
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js";
+    import { getDatabase, set, ref, update, child, get } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-database.js";
+    import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyD4pas0pvQQovr1vpT5QlBYWR_1OthDUEI",
+        authDomain: "dataapp-8bc6d.firebaseapp.com",
+        databaseURL: "https://dataapp-8bc6d-default-rtdb.firebaseio.com",
+        projectId: "dataapp-8bc6d",
+        storageBucket: "dataapp-8bc6d.appspot.com",
+        messagingSenderId: "1052775979865",
+        appId: "1:1052775979865:web:b8de5ba5d832e93b18ca48"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase(app);
+    const dbRef = ref(getDatabase());
+    const auth = getAuth();
+    onAuthStateChanged(auth, (user) => {
+
+        if (user) {
+            // User is signed in, see docs for a list of available properties
+            // https://firebase.google.com/docs/reference/js/firebase.User
+            const uid = user.uid;
+            //     console.log("test1");
+            //     console.log(uid);
+            //     const firstname = user.displayName;
+            //     console.log(firstname);
+
+            get(child(dbRef, `users/${uid}`)).then((snapshot) => {
+                if (snapshot.exists()) {
+                    console.log(snapshot.val());
+                } else {
+                    console.log("No data available");
+                }
+            }).catch((error) => {
+                console.error(error);
+            });
+
+
+            document.getElementById('userPreference').addEventListener('click', function () {
+                window.location = "userPreferences.html"
+            });
+
+            document.getElementById('logout').addEventListener('click', function () {
+                signOut(auth).then(() => {
+                    //alert(user.firstname);
+                    var currentUser = JSON.parse(sessionStorage.getItem('user'));
+
+                    sessionStorage.removeItem('user');
+                    alert("Sign-out successful");
+
+                    window.location = "login.html";
+                }).catch((error) => {
+                    alert("Something Went wrong");
+                });
+            });
+            // ...
+        }
+        else {
+            document.getElementById('userPreference').addEventListener('click', function () {
+                alert("User not logged in");
+            })
+            document.getElementById('logout').addEventListener('click', function () {
+                alert("User not logged in");
+            })
+        }
+    });
+
+
+</script>
+
+</html>

@@ -98,7 +98,7 @@ function loadQuiz() {
     deselectAnswers()
     const currentQuizData = quizData[currentQuiz]
 
-    var count = 30000000;
+    var count = 300000;
     var interval = setInterval(function(){
     console.log("test...............")
     if(document.getElementById('count').innerText=count == null) {

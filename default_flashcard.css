@@ -100,7 +100,7 @@ hr {
 }
 
 button {
-	padding: 2rem;
+	padding: 1rem 4rem;
   	outline: none;
   	cursor: pointer;
   	border: 1px solid lightgray;
@@ -110,4 +110,8 @@ button {
 	margin: auto;
    	/* display: block;
   	display: flex; */
+}
+
+.next {
+	padding: 1rem;
 }

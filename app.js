@@ -50,10 +50,11 @@ function myFunction1() {
       icon.onclick = function() {
       document.body.classList.toggle("dark-theme");
       if(document.body.classList.contains("dark-theme")) {
-        icon.src = "images/sun.png";
+        <h4>DarkMode</h4>
       }
+      
       else {
-        icon.src = "images/moon.png";
+        <h4>LightMode</h4>
       }
     }
   }

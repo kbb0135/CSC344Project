@@ -31,7 +31,8 @@
                 <h5> Total Time : <br> (00: <span id="time">00</span>)</h5> 
             </div> -->
             
-            <div id="count">Time left : </div>
+            <!-- <div id="count">Time left : </div> -->
+            Time : <span id="count"></span>
 
             <h5 id="page">Pages</h5>
             <h2 id="question"> Question Text</h2>
@@ -78,51 +79,4 @@
     
 
 </body>
-<script type = "module">
-import {quizData} from '/quiz1.js';
-import {score} from '/quiz1.js';
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js";
-import { getDatabase,set, ref,update, child, get,push} from "https://www.gstatic.com/firebasejs/9.13.0/firebase-database.js";
-import { getAuth, signInWithEmailAndPassword,onAuthStateChanged, signOut} from "https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js";
-const firebaseConfig = {
-    apiKey: "AIzaSyD4pas0pvQQovr1vpT5QlBYWR_1OthDUEI",
-    authDomain: "dataapp-8bc6d.firebaseapp.com",
-    databaseURL: "https://dataapp-8bc6d-default-rtdb.firebaseio.com",
-    projectId: "dataapp-8bc6d",
-    storageBucket: "dataapp-8bc6d.appspot.com",
-    messagingSenderId: "1052775979865",
-    appId: "1:1052775979865:web:b8de5ba5d832e93b18ca48"
-  };
-
-const app = initializeApp(firebaseConfig);
-const database = getDatabase(app);
-const dbRef = ref(getDatabase());
-const auth = getAuth();
-onAuthStateChanged(auth, (user) => {
-    // const user = userCredential.user;
-        var a = document.getElementById('a').value;
-        var b = document.getElementById('b').value;
-        var c = document.getElementById('c').value;
-        var d = document.getElementById('d').value;
-       // var submit = document.getElementById('submit').value;
-    const uid = user.uid;
-    if(user) {
-        const question = quizData;
-        console.log(question);
-        document.getElementById('submit').addEventListener('click', function(){
-            //alert("Test1");
-            alert(score);
-            //console.log("Adb")
-        
-            update(ref(database, 'users/'+user.uid),{
-                Quiz: question,
-                score: score
-            })
-//console.log("test3");
-//console.log(score1);
-})
-        
-}
-})
-</script>
 </html>

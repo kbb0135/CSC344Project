@@ -8,14 +8,22 @@
 }
 
 
+/*navbar*/
+.navbar{
+    --bs-navbar-active-color:black;
+}
 
-
+.nav-link{
+    color:black;
+}
 /*next and Previous buttton*/
 .nextprev a.w3-right, .nextprev a.w3-left {
-    background-color: #04AA6D;
-    color: #ffffff;
+    background-color: #e3eae7;
+    color: #04AA6D;
     border-color: #04AA6D;
+
 }
+
 .nextprev a {
     font-size: 18px;
     font-family: 'Source Sans Pro', sans-serif;
@@ -24,6 +32,7 @@
     border: 1px solid #cccccc;
     border-radius: 5px;
 }
+
 .ws-btn {
     display: inline-block;
     padding: 6px 18px;
@@ -34,11 +43,12 @@
     cursor: pointer;
     white-space: nowrap;
 }
+
 .w3-right {
     float: right!important;
 }
 
-/*Template*/
+/*Template videos and image*/
 .blog_1{
     margin-left: 90px;
     margin-right: 90px;
@@ -47,21 +57,22 @@
     margin-left: 180px;
     margin-top: 65px;
 }
-.next{
-    margin-left: 5000px;
-    margin-bottom:60px;
-}
-.header h1{
-    color: rgb(70, 242, 70);
+ul li {
+    text-align: center;
+    list-style: none;
+  }
+
+.heading h1{
+    color: black;
     text-align:  center;
     margin-top: 20px;
     margin-bottom: 50px;
 }
-.header h2{
+.heading h2{
     color:  var(--secondary-color);
     margin-left: 180px;
 }
-.header li{
+.heading li{
     color: var(--secondary-color);
     margin-left: 180px;
     font-size:19px;
@@ -77,6 +88,6 @@
     color: var(--secondary-color);
     margin-left: 180px;
     font-size:19px;
-
+    
 }
 

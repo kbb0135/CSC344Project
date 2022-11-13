@@ -5,6 +5,7 @@ menu.addEventListener('click',function() {
     menu.classList.toggle('is-active');
     menuLinks.classList.toggle('active');
 });
+
 function myFunction() { 
     document.getElementById("DropDown").classList.toggle("show");
 }

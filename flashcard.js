@@ -20,7 +20,7 @@
   let l = sessionStorage.getItem("j");
   
 var contentArray = sessionStorage.getItem('items') ? JSON.parse(sessionStorage.getItem('items')) : [];
-
+//The place where i have to make sure that file updates are gonna happen suc as push set ref
 document.getElementById("save_card").addEventListener("click", () => {
   addFlashcard();
 });

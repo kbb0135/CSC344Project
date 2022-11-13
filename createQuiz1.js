@@ -32,7 +32,8 @@ const firebaseConfig = {
         const uid = user.uid;
         console.log("here")
             get(child(dbRef, `users/${uid}`)).then((snapshot) => {
-                if (snapshot.exists()) {  
+                if (snapshot.exists()) {
+  
                   //console.log(snapshot.val());
                   
                   //console.log(temp)
@@ -90,27 +91,26 @@ document.getElementById('submit').addEventListener('click', function(){
     c1 = document .getElementById('choice1')?.value;
     //checker(c1);
     q2 = document.getElementById('question2')?.value;
-    oo1 = document.getElementById('2opt1')?.value;
-    oo2 = document.getElementById('2opt2')?.value;
-    oo3 = document.getElementById('2opt3')?.value;
-    oo4 = document.getElementById('2opt4')?.value;
+    p1 = document.getElementById('2opt1')?.value;
+    p2 = document.getElementById('2opt2')?.value;
+    p3 = document.getElementById('2opt3')?.value;
+    p4 = document.getElementById('2opt4')?.value;
     c2 = document .getElementById('choice2')?.value;
     //checker(c2);
     q3 = document.getElementById('question3')?.value;
-    ooo1 = document.getElementById('3opt1')?.value;
-    ooo2 = document.getElementById('3opt2')?.value;
-    ooo3 = document.getElementById('3opt3')?.value;
-    ooo4 = document.getElementById('3opt4')?.value;
+    r1 = document.getElementById('3opt1')?.value;
+    r2 = document.getElementById('3opt2')?.value;
+    r3 = document.getElementById('3opt3')?.value;
+    r4 = document.getElementById('3opt4')?.value;
     c3 = document .getElementById('choice3')?.value;
     //checker(c3);
     q4 = document.getElementById('question4')?.value;
-    oooo1 = document.getElementById('4opt1')?.value;
-    oooo2 = document.getElementById('4opt2')?.value;
-    oooo3 = document.getElementById('4opt3')?.value;
-    oooo4 = document.getElementById('4opt4')?.value;
+    s1 = document.getElementById('4opt1')?.value;
+    s2 = document.getElementById('4opt2')?.value;
+    s3 = document.getElementById('4opt3')?.value;
+    s4 = document.getElementById('4opt4')?.value;
     c4 = document .getElementById('choice4')?.value;
     //checker(c4);
-    
     
       onAuthStateChanged(auth, (user) => {
         if(user) {

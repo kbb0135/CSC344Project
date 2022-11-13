@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CodeHTML</title>
+    <title>Admin Home</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 <link rel="stylesheet" href="chapter1.css">
@@ -56,26 +56,23 @@
                             Quizzes
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="quiz1.html">Quiz 1</a></li>
-                            <li><a class="dropdown-item" href="quiz2.html">Quiz 2</a></li>
-                            <li><a class="dropdown-item" href="quiz3.html">Quiz 3</a></li>
-                            <li><a class="dropdown-item" href="quiz4.html">Quiz 4</a></li>
-                            <li><a class="dropdown-item" href="quiz5.html">Quiz 5</a></li>
+                            <li><a class="dropdown-item" href="createQuiz1.html">Create Quiz 1</a></li>
+                            <li><a class="dropdown-item" href="quiz2.html">Create Quiz 2</a></li>
+                            <li><a class="dropdown-item" href="quiz3.html">Create Quiz 3</a></li>
+                            <li><a class="dropdown-item" href="quiz4.html">Create Quiz 4</a></li>
+                            <li><a class="dropdown-item" href="quiz5.html">Create Quiz 5</a></li>
                         </ul>
                     </li>
 
 
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="progressbar.html">Progress Report</a>
-                    </li>
-                    <!--Settings-->
+                    
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
                             Settings
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="" id='userPreference'>User Preferences</a></li>
+                            
                             <li><a class="dropdown-item" href="" id='userPreference'>Dark Mode</a></li>
                             <li><a class="dropdown-item" href="" id='logout'>LogOut</a></li>
 
@@ -83,70 +80,42 @@
                     </li>
 
                 </ul>
-                <form class="d-flex" role="search">
+                <!-- <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
+                </form> -->
             </div>
         </div>
     </nav>
 
-
-    <!-- Corousel content made to fill home page content -->
-    
     <script src = "app.js"></script>
     <!-- <div class = "main_img--container">
         <img src="images/Edu_image.svg" alt="pic" id="main__img" />
     </div> -->
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="" class="d-block w-100" alt="...">
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
                 integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
                 crossorigin="anonymous"></script>
 </body>
 <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js";
-    import { getDatabase,set, ref,update, child, get } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-database.js";
-    import { getAuth, signInWithEmailAndPassword,onAuthStateChanged, signOut} from "https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js";
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
+    import { getDatabase,get,set, ref,update,child } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-database.js";
+    import { getAuth, signInWithEmailAndPassword,onAuthStateChanged, signOut} from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
     // TODO: Add SDKs for Firebase products that you want to use
     // https://firebase.google.com/docs/web/setup#available-libraries
   
     // Your web app's Firebase configuration
-    const firebaseConfig = {
-    apiKey: "AIzaSyD4pas0pvQQovr1vpT5QlBYWR_1OthDUEI",
-    authDomain: "dataapp-8bc6d.firebaseapp.com",
-    databaseURL: "https://dataapp-8bc6d-default-rtdb.firebaseio.com",
-    projectId: "dataapp-8bc6d",
-    storageBucket: "dataapp-8bc6d.appspot.com",
-    messagingSenderId: "1052775979865",
-    appId: "1:1052775979865:web:b8de5ba5d832e93b18ca48"
+    // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyAIyfmd_5AtYzJdovcVzOZ4F555_fFHEN0",
+    authDomain: "admin-d8e2a.firebaseapp.com",
+    projectId: "admin-d8e2a",
+    storageBucket: "admin-d8e2a.appspot.com",
+    messagingSenderId: "521159802193",
+    appId: "1:521159802193:web:ff41c81b9033c620b56770"
   };
-    
-const app = initializeApp(firebaseConfig);
+
+  const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 const dbRef = ref(getDatabase());
 const auth = getAuth();
@@ -172,19 +141,16 @@ onAuthStateChanged(auth, (user) => {
 });
 
 
-document.getElementById('userPreference').addEventListener('click',function(){
-    window.location = "userPreferences.html"
-});
 
 document.getElementById('logout').addEventListener('click',function(){
     signOut(auth).then(() => {
         //alert(user.firstname);
-    var currentUser = JSON.parse(sessionStorage.getItem('user'));
+   // var currentUser = JSON.parse(sessionStorage.getItem('user'));
 
-    sessionStorage.removeItem('user');
+    //sessionStorage.removeItem('user');
   alert("Sign-out successful");
 
-  window.location = "login.html";
+  window.location = "adminLogin.html";
 }).catch((error) => {
   alert("Something Went wrong");
 });
@@ -201,6 +167,5 @@ document.getElementById('logout').addEventListener('click',function(){
   }
 });
 
-
-</script>
-</html>
+  </script>
+  </html>

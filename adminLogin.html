@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Admin </title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script></head>
+    <link rel="stylesheet" type="text/css" href="login.css">
+    <!-- <link rel="stylesheet" href="styleHome.css"> -->
+<body>
+    <div class="loginbox">
+
+        <div class="home"> 
+            <a href="index.html"> Home </a>
+        </div>
+
+        <h1> Admin Login </h1>
+        <form> 
+            <p> Email </p>
+            <input type="text" id='email' name="email"  placeholder="E-mail" />
+            <p> Password </p>
+            <input type="password" placholder = "password" id='password' placeholder="Enter Password" autocomplete="on">
+            <!-- <input type="submit"  id='login' name = "Signin" value="Sign In"/> -->
+            <h2 id ='login' >Log In</h2>
+            <a href="login.html"> Not Admin? </a> <br>
+            <!-- <div class="home"> 
+                <a href="home.html"> HOME </a>
+            </div> -->
+        </form>
+        <!-- <div class="home"> 
+            <a href="home.html"> HOME </a>
+        </div> -->
+    </div>
+</body>
+</head>
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
+    import { getDatabase,set, ref,update } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-database.js";
+    import { getAuth, signInWithEmailAndPassword, signOut} from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyAIyfmd_5AtYzJdovcVzOZ4F555_fFHEN0",
+    authDomain: "admin-d8e2a.firebaseapp.com",
+    projectId: "admin-d8e2a",
+    storageBucket: "admin-d8e2a.appspot.com",
+    messagingSenderId: "521159802193",
+    appId: "1:521159802193:web:ff41c81b9033c620b56770"
+  };
+    // import { getDatabase,set, ref, child } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-database.js";
+    // // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase(app);
+    const auth = getAuth();
+
+ //how to make table in html file
+
+
+    document.getElementById('login').addEventListener('click', function(){
+        var email = document.getElementById('email').value;
+        var password = document.getElementById('password').value;
+        //alert("test1");
+
+        signInWithEmailAndPassword(auth, email, password).then((userCredential) => {
+            //alert("test2");
+        // Signed in 
+            const user = userCredential.user;
+
+            const dt = new Date();
+            update(ref(database, 'users/' + user.uid),{
+                last_login: dt,
+            })
+
+            alert('Admin loged in!');
+            sessionStorage.setItem('user', JSON.stringify(user));
+            window.location = "adminHome.html";
+        // ...
+        })
+            .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+
+            alert(errorMessage);
+    });
+
+});
+</script>
+</html>

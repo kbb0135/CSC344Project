@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
-import { getDatabase,set, ref,update,get,child} from "https://www.gstatic.com/firebasejs/9.14.0/firebase-database.js";
+import { getDatabase,set, ref,update,get,child, onValue} from "https://www.gstatic.com/firebasejs/9.14.0/firebase-database.js";
 import { getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut} from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
 let q1,q2,q3,q4,temp; //for questions
 export {temp, temp1,temp2, temp3, temp4, temp5,
@@ -8,9 +8,9 @@ export {temp, temp1,temp2, temp3, temp4, temp5,
     temp21, temp22,temp23};
 //s1 = "How are you";
 let o1,o2,o3,o4;    //for question1 options
-let oo1, oo2, oo3, oo4; //for question2 options
-let ooo1, ooo2, ooo3, ooo4; //for question3 options
-let oooo1, oooo2, oooo3, oooo4; //for question4 options
+let p1, p2, p3, p4; //for question2 options
+let r1, r2, r3, r4; //for question3 options
+let s1,s2,s3,s4; //for question4 options
 let c1, c2,c3,c4; //for choice options
 let l;
 let temp1,temp2,temp3,temp4,temp5,temp6,temp7,temp8,temp9,temp10,temp11,temp12,
@@ -89,28 +89,28 @@ document.getElementById('submit').addEventListener('click', function(){
     o3 = document.getElementById('opt3')?.value;
     o4 = document.getElementById('opt4')?.value;
     c1 = document .getElementById('choice1')?.value;
-
+    //checker(c1);
     q2 = document.getElementById('question2')?.value;
     oo1 = document.getElementById('2opt1')?.value;
     oo2 = document.getElementById('2opt2')?.value;
     oo3 = document.getElementById('2opt3')?.value;
     oo4 = document.getElementById('2opt4')?.value;
     c2 = document .getElementById('choice2')?.value;
-
+    //checker(c2);
     q3 = document.getElementById('question3')?.value;
     ooo1 = document.getElementById('3opt1')?.value;
     ooo2 = document.getElementById('3opt2')?.value;
     ooo3 = document.getElementById('3opt3')?.value;
     ooo4 = document.getElementById('3opt4')?.value;
     c3 = document .getElementById('choice3')?.value;
-
+    //checker(c3);
     q4 = document.getElementById('question4')?.value;
     oooo1 = document.getElementById('4opt1')?.value;
     oooo2 = document.getElementById('4opt2')?.value;
     oooo3 = document.getElementById('4opt3')?.value;
     oooo4 = document.getElementById('4opt4')?.value;
     c4 = document .getElementById('choice4')?.value;
-
+    //checker(c4);
     
     
       onAuthStateChanged(auth, (user) => {
@@ -125,24 +125,24 @@ document.getElementById('submit').addEventListener('click', function(){
                 correctAns:c1,
 
                 question2: q2,
-                e:o1,
-                f:o2,
-                g:o3,
-                h:o4,
+                e:p1,
+                f:p2,
+                g:p3,
+                h:p4,
                 correctAns1:c2,
 
                 question3: q3,
-                i:o1,
-                j:o2,
-                k:o3,
-                l:o4,
+                i:r1,
+                j:r2,
+                k:r3,
+                l:r4,
                 correctAns2:c3,
 
                 question4: q4,
-                m:o1,
-                n:o2,
-                o:o3,
-                p:o4,
+                m:s1,
+                n:s2,
+                o:s3,
+                p:s4,
                 correctAns3:c4
 
 
@@ -189,6 +189,7 @@ document.getElementById('submit').addEventListener('click', function(){
               }).catch((error) => {
                 console.error(error);
               });
+              alert("Questions Updated");
         }
         else {
             console.log("Something went wrong");

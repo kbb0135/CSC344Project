@@ -194,7 +194,6 @@ onAuthStateChanged(auth, (user) => {
             })
 //console.log("test3");
 //console.log(score1);
-})
-        
+})      
 }
 })

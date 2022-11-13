@@ -112,7 +112,6 @@ document.getElementById('submit').addEventListener('click', function(){
     c4 = document .getElementById('choice4')?.value;
     //checker(c4);
     
-    
       onAuthStateChanged(auth, (user) => {
         if(user) {
             const uid = user.uid;

@@ -32,8 +32,7 @@ const firebaseConfig = {
         const uid = user.uid;
         console.log("here")
             get(child(dbRef, `users/${uid}`)).then((snapshot) => {
-                if (snapshot.exists()) {
-                    
+                if (snapshot.exists()) {  
                   //console.log(snapshot.val());
                   
                   //console.log(temp)

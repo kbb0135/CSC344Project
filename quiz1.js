@@ -1,8 +1,15 @@
-//import {quizData} from '/quiz1.js';
+import {temp, temp1,temp2, temp3, temp4, temp5,
+    temp6,temp7,temp8,temp9,temp10,temp11,temp12,
+    temp13,temp14,temp15,temp16,temp17,temp18,temp19,temp20,
+    temp21, temp22,temp23} from '/createQuiz1.js';
+console.log(temp2+" "+temp3+" ")
+//console.log(s1)
+//console.log(temp)
 //import {score} from '/quiz1.js';
+//import { getDatabase,set, ref,update,get,child} from "https://www.gstatic.com/firebasejs/9.14.0/firebase-database.js";
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js";
-import { getDatabase,set, ref,update, child, get,push} from "https://www.gstatic.com/firebasejs/9.13.0/firebase-database.js";
-import { getAuth, signInWithEmailAndPassword,onAuthStateChanged, signOut} from "https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js";
+import { getDatabase, ref,update} from "https://www.gstatic.com/firebasejs/9.13.0/firebase-database.js";
+import { getAuth, onAuthStateChanged} from "https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js";
 const firebaseConfig = {
     apiKey: "AIzaSyD4pas0pvQQovr1vpT5QlBYWR_1OthDUEI",
     authDomain: "dataapp-8bc6d.firebaseapp.com",
@@ -12,51 +19,56 @@ const firebaseConfig = {
     messagingSenderId: "1052775979865",
     appId: "1:1052775979865:web:b8de5ba5d832e93b18ca48"
   };
-
+console.log(temp18)
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 const dbRef = ref(getDatabase());
 const auth = getAuth();
+console.log("option1:"+temp5)
+
 const quizData = [
     {
         //count: " ",
         page: "1/4",
-        question: "What does HTML stand for?",
-        a: "Hyper Text Markup Language",
-        b: "Hyper Text Makeup Language",
-        c: "Hyperloop Machine Language",
-        d: "Hyper Tag Machine Linux",
-        correct: "a",
+        question: temp,
+        a: temp1,
+        b: temp2,
+        c: temp3,
+        d: temp4,
+        correct: temp5,
     },
     {
         //count: " ",
         page: "2/4",
-        question: "What is the <h1> element used for?",
-        a: "Create a Home Page",
-        b: "Create a Headline",
-        c: "Create a Hyperlink",
-        d: "Create a Heading",
-        correct: "d",
+        question: temp6,
+        a: temp7,
+        b: temp8,
+        c: temp9,
+        d: temp10,
+        correct: temp11,
+
     },
     {
         page: "3/4",
-        question: "What is the <p> element used for?",
-        a: "Create a different page",
-        b: "Create a paragraph",
-        c: "Create a Pie Chart",
-        d: "Short for padding",
-        correct: "b",
+        question: temp12,
+        a: temp13,
+        b: temp14,
+        c: temp15,
+        d: temp16,
+        correct: temp17,
+
     },
     {
         page: "4/4",
-        question: "What is used to create space around the elements content?",
-        a: "Margin",
-        b: "Padding",
-        c: "Display",
-        d: "align-text",
-        correct: "b",
+        question: temp18,
+        a: temp19,
+        b: temp20,
+        c: temp21,
+        d: temp22,
+        correct: temp23,
     },
 ];
+
 const quiz= document.getElementById('quiz')
 const answerEls = document.querySelectorAll('.answer')
 const questionEl = document.getElementById('question')
@@ -101,11 +113,7 @@ function loadQuiz() {
     var count = 300000;
     var interval = setInterval(function(){
     console.log("test...............")
-    if(document.getElementById('count').innerText=count == null) {
-        alert("Here");
-        count =0;
-    }
-    document.getElementById('count').innerText=count;
+    count=document.getElementById('count')?.innerText;
     count--;
     if (count === 0){
         ``
@@ -167,14 +175,11 @@ submit_button.addEventListener('click', () => {
        
     }
 })
+// console.log(quiz[0]);
 onAuthStateChanged(auth, (user) => {
     // const user = userCredential.user;
-        var a = document.getElementById('a').value;
-        var b = document.getElementById('b').value;
-        var c = document.getElementById('c').value;
-        var d = document.getElementById('d').value;
        // var submit = document.getElementById('submit').value;
-    const uid = user.uid;
+    //const uid = user.uid;
     if(user) {
         const question = quizData;
         console.log(question);

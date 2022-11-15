@@ -2,7 +2,9 @@
 let q1 = 0;
 let q2 =1;
 let q3 = 2;
-let quiz1;
+let q4=3;
+let q5 = 4;
+let quiz1,quiz2,quiz3,quiz4,quiz5;
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js";
 import { getDatabase,set, ref,update, child, get,push} from "https://www.gstatic.com/firebasejs/9.13.0/firebase-database.js";
 import { getAuth, signInWithEmailAndPassword,onAuthStateChanged, signOut} from "https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js";
@@ -27,8 +29,12 @@ const firebaseConfig = {
     if (snapshot.exists()) {
       //console.log(snapshot.val());
         quiz1  = snapshot.val().score;
-        console.log("value"+quiz1)
-
+        quiz2 = snapshot.val().score2;
+        quiz3 = snapshot.val().score3;
+        quiz4 = snapshot.val().score4;
+        quiz5 = snapshot.val().score5;
+        // console.log("value"+quiz1)
+        // console.log("value2"+quiz2)
         function start(q1,quiz1) {
           //window.onload = function () {window.location.reload()}
               var percent = document.querySelector(`#progress_${q1} .percent`);
@@ -41,7 +47,7 @@ const firebaseConfig = {
               let totalScore1 = quiz1*25;
               var random = totalScore1;
               console.log(totalScore1);
-              console.log(random);
+              //console.log(random);
               function startProgress() {
                   progress += 1;
                   if (progress <= random) {
@@ -54,7 +60,13 @@ const firebaseConfig = {
           
           }
           
+          
           start(q1,quiz1);
+          start(q2,quiz2);
+          start(q3,quiz3);
+          start(q4,quiz4);
+          start(q5,quiz5);
+          
   
     } else {
       console.log("No data available");

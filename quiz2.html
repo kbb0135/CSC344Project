@@ -67,7 +67,7 @@
     </div>
 
     <!-- <a href="home.html" class="back">Back to Home</a> -->
-    <script type = module src="quiz1.js"></script>
+    <script type = module src="quiz2.js"></script>
 
     <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
 		integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
@@ -80,7 +80,7 @@
 
 </body>
 <script type = "module">
-    import {temp} from '/quiz1.js';
+    import {temp} from '/quiz2.js';
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js";
     import { getDatabase,set, ref,update, child, get,push} from "https://www.gstatic.com/firebasejs/9.13.0/firebase-database.js";
     import { getAuth, signInWithEmailAndPassword,onAuthStateChanged, signOut} from "https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js";
@@ -112,12 +112,12 @@
             console.log(question);
             document.getElementById('submit').addEventListener('click', function(){
                 //alert("Test1");
-                //alert(score);
+                alert(score);
                 //console.log("Adb")
     
                 update(ref(database, 'users/'+user.uid),{
                     Quiz: question,
-                    score: localStorage.getItem("sc")
+                    score2: localStorage.getItem("sc")
                 })
     //console.log("test3");
     //console.log(score1);

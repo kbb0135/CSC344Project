@@ -67,7 +67,7 @@ document.getElementById('submit').addEventListener('click', function(){
       onAuthStateChanged(auth, (user) => {
 
         async function f1() {
-          await setDoc(doc(db1,"Quizes", "Quiz1"),{
+          await setDoc(doc(db1,"Quizes", "Quiz2"),{
             question1: q1,
             a:o1,
             b:o2,
@@ -104,7 +104,7 @@ document.getElementById('submit').addEventListener('click', function(){
 
         if(user) {
             //const uid = user.uid;
-            update(ref(database, 'Quiz1/'+user.uid),{
+            update(ref(database, 'Quiz2/'+user.uid),{
                 question1: q1,
                 a:o1,
                 b:o2,
@@ -125,7 +125,7 @@ document.getElementById('submit').addEventListener('click', function(){
                 k:r3,
                 l:r4,
                 correctAns2:c3,
-                
+
                 question4: q4,
                 m:s1,
                 n:s2,

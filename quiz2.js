@@ -28,7 +28,7 @@ const app = initializeApp(firebaseConfig);
 //const dbRef = ref(getDatabase());
 //const auth = getAuth();
 const db1 = getFirestore();
-const docRef = doc(db1, "Quizes", "Quiz1");
+const docRef = doc(db1, "Quizes", "Quiz2");
 const docSnap = await getDoc(docRef);
 if(docSnap.exists()) {
 var quizData = [
@@ -84,9 +84,6 @@ const c_text = document.getElementById('c_text')
 const d_text = document.getElementById('d_text')
 const submit_button = document.getElementById('submit')
 const home_button = document.getElementById('home')
-
-// const previous_btn = document.getElementById('previous')
-
 let currentQuiz = 0
 let score = 0
 const wrongANS = []
@@ -156,11 +153,9 @@ function getSelected() {
     })
     return answer
 }
-const temp="c"
 submit_button.addEventListener('click', () => {
     //alert("test 123")
     const answer = getSelected()
-
     if(answer) {
        if(answer === quizData[currentQuiz].correct) {
            score++

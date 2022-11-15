@@ -4,8 +4,19 @@
 	box-sizing: border-box;
 }
 body {
-	background: #4e699d;
+	/* background: #4e699d; */
+	background: rgb(231, 227, 227);
 	font-family: sans-serif;
+}
+
+#header{
+	display: flex;
+    justify-content: space-between;
+    align-items: right;
+    min-height: 70px;
+    padding: 0 00px;
+    background: #fff;
+    /* padding:0rem 4rem; */
 }
 
 label {
@@ -67,8 +78,9 @@ label:hover :checked + .flip-card {
 
 .front h1 {
 	font-size: 30px;
-	color: #499bef;
-	padding: 7rem 4rem;
+	/* color: #499bef; */
+	color: #44b927;
+	/* padding: 5rem 4rem; */
 	text-align: center;
 }
 
@@ -93,9 +105,10 @@ hr {
 }
 
 .back h2 {
-	font-size: 30px;
-	color: #499bef;
-	padding: 5rem 4rem;
+	font-size: 25px;
+	/* color: #499bef; */
+	color: #44b927;
+	/* padding: 6rem 4rem 7rem 4rem; */
 	text-align: center;
 }
 
@@ -112,6 +125,17 @@ button {
   	display: flex; */
 }
 
-.next {
+/* .next {
 	padding: 1rem;
+} */
+
+h5{
+    /* padding: 1rem; */
+    text-align: right;
+    margin: 0;
+	padding: 2rem;
+}
+
+.question-box {
+	padding: 5rem 2rem;
 }

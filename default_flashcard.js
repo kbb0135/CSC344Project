@@ -12,6 +12,7 @@ const app = initializeApp(firebaseConfig);
 const db1 = getFirestore();
 const docRef = doc(db1, "FlashCards", "Chapter1");
 const docSnap = await getDoc(docRef);
+let x;
 if(docSnap.exists()) { 
  const cardData = [
     {
@@ -49,6 +50,13 @@ const card_answer = document.getElementById('answer')
 const next_btn = document.getElementById('next')
 const previous_btn = document.getElementById('previous')
 
+const pageNum = document.getElementById('page')
+
+
+// const speak_btn = document.getElementById('speak')
+
+
+
 let currentCard = 0
 
 loadCard()
@@ -56,7 +64,10 @@ loadCard()
 function loadCard() {
     const currentCardData = cardData[currentCard]
 
+    pageNum.innerText = currentCardData.page
+
     card_question.innerText = currentCardData.question
+    x=currentCardData.question;
     card_answer.innerText = currentCardData.answer
 }
 
@@ -76,6 +87,24 @@ previous_btn.addEventListener("click", () => {
     }
 })
 }
-else {
-    console.log("No data available");
-}
+
+console.log("test2")
+console.log(x)
+document.getElementById('speak').addEventListener("click", () => {
+    function textToAudio() {
+        // let msg = document.getElementById(card_question).value;
+        let msg = x;
+        console.log("msg")
+        
+        let speech = new SpeechSynthesisUtterance();
+        speech.lang = "en-US";
+        
+        speech.text = msg;
+        speech.volume = 1;
+        speech.rate = 0.85;
+        speech.pitch = 1;
+        
+        window.speechSynthesis.speak(speech);
+    }
+    textToAudio();
+})

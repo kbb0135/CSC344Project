@@ -112,7 +112,7 @@
             console.log(question);
             document.getElementById('submit').addEventListener('click', function(){
                 //alert("Test1");
-                alert(score);
+                //alert(score);
                 //console.log("Adb")
     
                 update(ref(database, 'users/'+user.uid),{
@@ -122,7 +122,10 @@
     //console.log("test3");
     //console.log(score1);
     })
-    
+    update(ref(database, 'users/'+user.uid),{
+                    Quiz: question,
+                    score: localStorage.getItem("sc")
+                })
     }
     })
     </script>

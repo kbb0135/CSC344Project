@@ -12,6 +12,7 @@ const app = initializeApp(firebaseConfig);
 const db1 = getFirestore();
 const docRef = doc(db1, "FlashCards", "Chapter1");
 const docSnap = await getDoc(docRef);
+let x;
 if(docSnap.exists()) { 
  const cardData = [
     {
@@ -57,7 +58,7 @@ const pageNum = document.getElementById('page')
 
 
 let currentCard = 0
-let x;
+
 loadCard()
 
 function loadCard() {
@@ -85,6 +86,7 @@ previous_btn.addEventListener("click", () => {
         loadCard()
     }
 })
+}
 
 console.log("test2")
 console.log(x)
@@ -105,4 +107,4 @@ document.getElementById('speak').addEventListener("click", () => {
         window.speechSynthesis.speak(speech);
     }
     textToAudio();
-});
+})

@@ -1,10 +1,27 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600&display=swap");
-*{
-    margin : 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Nunito', sans-serif;
-   
+/*Dark-Mode*/
+body{
+    background: #fff;
+    color:#000;
+    transition: 0.182s;
+}
+body.dark{
+
+    background-color: #2E3440;; /* When dark mode is on, set background color to black */
+  
+    color: #e8e8e8; /* When dark mode is on, set text color to white */
+  
+  }
+
+/*corousal*/
+.c-item{
+    height: 500px;
+    
+}
+.c-img{
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);
+    z-index: 999999;
 }
 
 
@@ -21,7 +38,7 @@
     background-color: #e3eae7;
     color: #04AA6D;
     border-color: #04AA6D;
-
+    isolation:isolate;
 }
 
 .nextprev a {
@@ -31,6 +48,7 @@
     padding-right: 19px;
     border: 1px solid #cccccc;
     border-radius: 5px;
+    isolation:isolate;
 }
 
 .ws-btn {
@@ -88,6 +106,52 @@ ul li {
     color: var(--secondary-color);
     margin-left: 180px;
     font-size:19px;
-    
 }
+
+/*Search bar */
+.dropbtn {
+    background-color: #129766;
+    color: black;
+    padding: 8px 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    z-index:  999999;;
+ }
+ .nav-item:hover, .-nav-item:focus {
+    background-color: whitesmoke;
+ }
+ .dropbtn:hover, .dropbtn:focus {
+    background-color: whitesmoke;
+ }
+ .searchField {
+    box-sizing: border-box;
+    font-size: 16px;
+    padding: 14px 20px 12px 45px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+ }
+ .searchField:focus {outline: 3px solid #ddd;}
+ .dropdown {
+    position: relative;
+    display: inline-block;
+ }
+ .dropdownList {
+    display: none;
+    position: absolute;
+    background-color: #f6f6f6;
+    min-width: 230px;
+    overflow: auto;
+    border: 1px solid #ddd;
+    z-index: 1;
+    right: 0%;
+ }
+ .dropdownList a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+ }
+ .dropdown a:hover {background-color: #ddd;}
+ .show {display: block;}
 

@@ -84,6 +84,9 @@ const c_text = document.getElementById('c_text')
 const d_text = document.getElementById('d_text')
 const submit_button = document.getElementById('submit')
 const home_button = document.getElementById('home')
+
+// const previous_btn = document.getElementById('previous')
+
 let currentQuiz = 0
 let score = 0
 const wrongANS = []
@@ -153,9 +156,11 @@ function getSelected() {
     })
     return answer
 }
+const temp="c"
 submit_button.addEventListener('click', () => {
     //alert("test 123")
     const answer = getSelected()
+
     if(answer) {
        if(answer === quizData[currentQuiz].correct) {
            score++

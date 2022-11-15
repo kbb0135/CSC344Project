@@ -24,6 +24,9 @@ body.dark{
     z-index: 999999;
 }
 
+.nav-item{
+    word-spacing: 0px;
+}
 
 /*navbar*/
 .navbar{

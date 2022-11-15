@@ -1,50 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML Tool</title> <!--Name of the website in the tab-->
-    <script src="https://kit.fontawesome.com/05969f9ed4.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css">    <!--Linking to style.css-->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CodeHTML</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="chapter1.css">
+
 </head>
+
 <body>
-    <nav class = "navbar">
-        <div class = "navbar__container">
-            <a href="index.html" id="navbar__logo"><i class = "fa-solid fa-laptop-code"></i>Code-HTML</a>
-            <div class = "navbar__toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-            <!--Home Menu Functionff-->
-        <ul class = "navbar__menu">
-            <li class = "navbar__item">
-                <a href="home.html" class = "navbar__links">Guest Mode</a>
-            </li>
-            <li class = "navbar__item">
-                <a href="login.html" class = "navbar__links">Login</a>
-            </li>
-            <li class = "navbar__btn">
-                <a href="sign.html" class = "button">SignUp</a>
-            </li>
+  <!--Navigation Bar---->
+  <nav class="navbar navbar-expand-lg bg-success">
+    <div class="container-fluid text-center">
+      <a class="navbar-brand" href="index.html">Code-HTML</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+        aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarScroll">
+        <ul class="navbar-nav m-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+
+          <!--Home Feature-->
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="login.html">LogIn</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="sign.html">Register</a>
+          </li>
         </ul>
-        <!---------------------------------->
+        <div class="dropdown">
+          <button class="dropbtn" onclick="showDropList()">Search</button>
+          <div id="myDropdown" class="dropdownList">
+            <input type="text" placeholder="Search.." class="searchField">
+            <a href="chapter1.html">Chapter 1</a>
+            <a href="chapter2.html">Chapter 2</a>
+            <a href="chapter3.html">Chapter 3</a>
+            <a href="chapter4.html">Chapter 4</a>
+            <a href="chapter5.html">Chapter 5</a>
+            <a href="quiz1.html">Quiz 1</a>
+            <a href="default_flashcard.html">Flashcard</a>
+            <a href="flashcard.html">Flashcard (Custom) </a>
+            <a href="progressbar.html">Progress Report</a>
+          </div>
         </div>
-        
-    </nav>
-    <div class = "main">
-        <div class ="main__container">
-            <div class="main__content">
-                <h1>Learn HTML in an easy way</h1>
-                <p>We are here to help you  </p>
-                <h2>CODE EFFICIENTLY </h2>
-            </div>
-            <div class = "main_img--container">
-                <img src="images/pic1.svg" alt="pic" id="main__img" />
-            </div>
+        <script>
+          function showDropList() {
+            let dropDiv = document.querySelector('.dropdownList');
+            if (dropDiv.style.display === "block") {
+              dropDiv.style.display = "";
+            } else {
+              dropDiv.style.display = "block";
+            }
+          }
+          document.querySelector('.searchField').addEventListener('keyup', filterDropdown);
+          function filterDropdown() {
+            var inputSearch, filterText, ul, li, links, i, div;
+            inputSearch = document.querySelector(".searchField");
+            filterText = inputSearch.value.toUpperCase();
+            div = document.getElementById("myDropdown");
+            links = div.getElementsByTagName("a");
+            for (i = 0; i < links.length; i++) {
+              txtValue = links[i].textContent || links[i].innerText;
+              if (txtValue.toUpperCase().indexOf(filterText) > -1) {
+                links[i].style.display = "";
+              } else {
+                links[i].style.display = "none";
+              }
+            }
+          }
+        </script>
+      </div>
     </div>
-    
-    <script src="app.js"></script>
+  </nav>
+
+  <!-- Corousel content made to fill home page content -->
+
+
+
+  <!-- <div class = "main_img--container">
+        <img src="images/Edu_image.svg" alt="pic" id="main__img" />
+    </div> -->
+  <!-- corousae -->
+
+  <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="false">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+        aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+        aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+        aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active c-item" data-interval="2000">
+        <img
+          src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+          class="d-block w-100 c-img" alt="Slide 1">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Welcome to Code-HTML</h5>
+          <p>Learn to make fun web applications.</p>
+          <button class="btn btn-danger">Technology</button>
+          <button class="btn btn-primary">Web Development</button>
+          <button class="btn btn-success">Tech Learn</button>
+
+        </div>
+      </div>
+      <div class="carousel-item c-item" data-interval="2000">
+        <img
+          src="https://images.unsplash.com/photo-1457305237443-44c3d5a30b89?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=874&q=80"
+          class="d-block w-100 c-img" alt="Slide 2">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Welcome to Code-HTML</h5>
+          <p>The best coding app.</p>
+          <button class="btn btn-danger">Technology</button>
+          <button class="btn btn-primary">Web Development</button>
+          <button class="btn btn-success">Tech Learn</button>
+
+        </div>
+      </div>
+      <div class="carousel-item c-item" data-interval="2000">
+        <img
+          src="https://images.unsplash.com/photo-1508830524289-0adcbe822b40?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8aHRtbCUyMGNvZGluZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60"
+          class="d-block w-100 c-img" alt="Slide 3">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Welcome to Code-HTML.</h5>
+          <p>We are here to help.</p>
+          <button class="btn btn-danger">Technology</button>
+          <button class="btn btn-primary">Web Development</button>
+          <button class="btn btn-success">Tech Learn</button>
+
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+
+  <!-- First one card -->
+  <div class="blog_1 my-5">
+    <div class="row mb-2">
+      <div class="col-md-6">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+          <div class="col p-4 d-flex flex-column position-static">
+            <strong class="d-inline-block mb-2 text-primary text-success">Learn HTML</strong>
+            <h5 class="mb-0 text-primary text-success">Master with our Guidance</h5>
+            <p class="card-text mb-auto text-success" >Our goal is to help you succeed in learning the basics of HTML.Motivating and guiding you in the right path towards success.</p>
+            <a href="images/card1.jpg" class="stretched-link" >View Image</a>
+          </div>
+          <div class="col-auto d-none d-lg-block">
+            <img class="bd-placeholder-img" width="360" height="390" src="images/card1.jpg" alt="">
+
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+          <div class="col p-4 d-flex flex-column position-static">
+            <strong class="d-inline-block mb-2 text-success" >Web-Design</strong>
+            <h3 class="mb-0 text-success" > Dictate the Future</h3>
+            <p class="mb-auto text-success">With our online learning platform, you can watch videos,chapters,and study with
+              flashcards.</p>
+            <a href="images/pic1.svg" class="stretched-link">View Image</a>
+          </div>
+          <div class="col-auto d-none d-lg-block">
+            <img class="bd-placeholder-img" width="360" height="390" src="images/pic1.svg" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"></script>
+    <!-- JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+    <script>
+      function addDarkmodeWidget() {
+        new Darkmode().showWidget();
+      }
+      window.addEventListener('load', addDarkmodeWidget);
+    </script>
+    <script src="./app.js"></script>
+
 </body>
+</body>
+
 </html>

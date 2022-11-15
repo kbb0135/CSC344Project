@@ -80,7 +80,7 @@
 
 </body>
 <script type = "module">
-    import {temp} from '/quiz2.js';
+    import {temp2} from '/quiz2.js';
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js";
     import { getDatabase,set, ref,update, child, get,push} from "https://www.gstatic.com/firebasejs/9.13.0/firebase-database.js";
     import { getAuth, signInWithEmailAndPassword,onAuthStateChanged, signOut} from "https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js";
@@ -98,31 +98,36 @@
     const database = getDatabase(app);
     const dbRef = ref(getDatabase());
     const auth = getAuth();
-    console.log("score="+temp);
+    let val = localStorage.getItem("sc3");
+    //console.log("score="+temp2);
     onAuthStateChanged(auth, (user) => {
         // const user = userCredential.user;
             var a = document.getElementById('a').value;
             var b = document.getElementById('b').value;
             var c = document.getElementById('c').value;
             var d = document.getElementById('d').value;
+            localStorage.getItem("scr2");
            // var submit = document.getElementById('submit').value;
         //const uid = user.uid;
         if(user) {
             //const question = quizData;
-            console.log(question);
+            //console.log(question);
             document.getElementById('submit').addEventListener('click', function(){
                 //alert("Test1");
-                alert(score);
+                //alert(score);
                 //console.log("Adb")
     
                 update(ref(database, 'users/'+user.uid),{
-                    Quiz: question,
-                    score2: localStorage.getItem("sc")
+                    
+                    score2: localStorage.getItem("sc2")
                 })
     //console.log("test3");
     //console.log(score1);
     })
-    
+    update(ref(database, 'users/'+user.uid),{
+
+                    score2: localStorage.getItem("sc2")
+                })
     }
     })
     </script>

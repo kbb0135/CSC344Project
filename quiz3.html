@@ -16,7 +16,7 @@
             <h5> Total Time : <br> (00: <span id="time">00</span>)</h5> 
         </div> -->
         <div id="header">
-            <h3>Chapter 1 Quiz</h2>
+            <h3>Chapter 3 Quiz</h2>
             <a href = "home.html" class = "back" id="home"><h3>Home</h3></a>
         </div>
 
@@ -80,7 +80,7 @@
 
 </body>
 <script type = "module">
-    import {temp} from '/quiz3.js';
+    //import {temp} from '/quiz3.js';
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js";
     import { getDatabase,set, ref,update, child, get,push} from "https://www.gstatic.com/firebasejs/9.13.0/firebase-database.js";
     import { getAuth, signInWithEmailAndPassword,onAuthStateChanged, signOut} from "https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js";
@@ -98,7 +98,7 @@
     const database = getDatabase(app);
     const dbRef = ref(getDatabase());
     const auth = getAuth();
-    console.log("score="+temp);
+    //console.log("score="+temp);
     onAuthStateChanged(auth, (user) => {
         // const user = userCredential.user;
             var a = document.getElementById('a').value;
@@ -109,20 +109,23 @@
         //const uid = user.uid;
         if(user) {
             //const question = quizData;
-            console.log(question);
+            //console.log(question);
             document.getElementById('submit').addEventListener('click', function(){
                 //alert("Test1");
-                alert(score);
+                //alert(score);
                 //console.log("Adb")
     
                 update(ref(database, 'users/'+user.uid),{
                     Quiz: question,
-                    score3: localStorage.getItem("sc")
+                    score3: localStorage.getItem("sc3")
                 })
     //console.log("test3");
     //console.log(score1);
     })
-    
+    update(ref(database, 'users/'+user.uid),{
+                    Quiz: question,
+                    score3: localStorage.getItem("s3")
+                })
     }
     })
     </script>

@@ -21,7 +21,7 @@ const firebaseConfig = {
     messagingSenderId: "521159802193",
     appId: "1:521159802193:web:ff41c81b9033c620b56770"
   };
-export var temp;
+//export var temp;
 
 const app = initializeApp(firebaseConfig);
 //const database = getDatabase(app);
@@ -159,7 +159,7 @@ submit_button.addEventListener('click', () => {
     if(answer) {
        if(answer === quizData[currentQuiz].correct) {
            score++
-           localStorage.setItem("sc", score);
+           localStorage.setItem("sc3", score);
            
            
        }
@@ -175,15 +175,16 @@ submit_button.addEventListener('click', () => {
         
            quiz.innerHTML = `
            <h2>You answered ${score}/${quizData.length} questions correctly</h2>
-            <button onclick="location.reload()">Retake Quiz</button>
-            <button onclick="window.location.assign(home.html)> Home </button>
+           <button onclick='location.reload()'>Retake Quiz</button>
+           <button onclick=window.location.assign('home.html')> Home </button>
+           <button onclick=window.location.assign('quizResponse3.html')> See correct answers </button>
            ` 
        }
        
     }
 })
 }
-temp=localStorage.getItem("sc");
+temp=localStorage.getItem("sc3");
 console.log("temp="+temp);
 // console.log(quiz[0]);
 // onAuthStateChanged(auth, (user) => {

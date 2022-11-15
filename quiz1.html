@@ -46,7 +46,6 @@
                     <input type="radio" name="answer" id="b" class="answer">
                     <label for="b" id="b_text"> Answer </label>
                 </li>
-
                 <li>
                     <input type="radio" name="answer" id="c" class="answer">
                     <label for="c" id="c_text"> Answer </label>
@@ -66,7 +65,8 @@
 
     </div>
 
-    <!-- <a href="home.html" class="back">Back to Home</a> -->
+    <a href="home.html" class="back">Back to Home</a>
+
     <script type = module src="quiz1.js"></script>
 
     <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
@@ -109,21 +109,21 @@
         //const uid = user.uid;
         if(user) {
             //const question = quizData;
-            console.log(question);
+            //console.log(question);
             document.getElementById('submit').addEventListener('click', function(){
                 //alert("Test1");
                 //alert(score);
                 //console.log("Adb")
     
                 update(ref(database, 'users/'+user.uid),{
-                    Quiz: question,
+                    
                     score: localStorage.getItem("sc")
                 })
     //console.log("test3");
     //console.log(score1);
     })
     update(ref(database, 'users/'+user.uid),{
-                    Quiz: question,
+                   
                     score: localStorage.getItem("sc")
                 })
     }

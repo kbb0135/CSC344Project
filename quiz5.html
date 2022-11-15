@@ -16,7 +16,7 @@
             <h5> Total Time : <br> (00: <span id="time">00</span>)</h5> 
         </div> -->
         <div id="header">
-            <h3>Chapter 1 Quiz</h2>
+            <h3> Quiz5</h2>
             <a href = "home.html" class = "back" id="home"><h3>Home</h3></a>
         </div>
 
@@ -80,7 +80,7 @@
 
 </body>
 <script type = "module">
-    import {temp} from '/quiz5.js';
+    
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js";
     import { getDatabase,set, ref,update, child, get,push} from "https://www.gstatic.com/firebasejs/9.13.0/firebase-database.js";
     import { getAuth, signInWithEmailAndPassword,onAuthStateChanged, signOut} from "https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js";
@@ -116,13 +116,16 @@
                 //console.log("Adb")
     
                 update(ref(database, 'users/'+user.uid),{
-                    Quiz: question,
-                    score5: localStorage.getItem("sc")
+                   
+                    score5: localStorage.getItem("sc5")
                 })
     //console.log("test3");
     //console.log(score1);
     })
-    
+    update(ref(database, 'users/'+user.uid),{
+                 
+                    score: localStorage.getItem("sc5")
+                })
     }
     })
     </script>

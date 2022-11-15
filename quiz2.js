@@ -13,6 +13,7 @@ import {getFirestore,doc,collection,getDoc,setDoc,addDoc} from "https://www.gsta
 //     messagingSenderId: "1052775979865",
 //     appId: "1:1052775979865:web:b8de5ba5d832e93b18ca48"
 //   };
+
 const firebaseConfig = {
     apiKey: "AIzaSyAIyfmd_5AtYzJdovcVzOZ4F555_fFHEN0",
     authDomain: "admin-d8e2a.firebaseapp.com",

@@ -28,7 +28,7 @@ const app = initializeApp(firebaseConfig);
 //const dbRef = ref(getDatabase());
 //const auth = getAuth();
 const db1 = getFirestore();
-const docRef = doc(db1, "Quizes", "Quiz1");
+const docRef = doc(db1, "Quizes", "Quiz2");
 const docSnap = await getDoc(docRef);
 if(docSnap.exists()) {
 var quizData = [

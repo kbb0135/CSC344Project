@@ -1,11 +1,46 @@
-export const cardData = [
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js"; 
+import {getFirestore,doc,collection,getDoc,setDoc,addDoc} from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
+const firebaseConfig = {
+    apiKey: "AIzaSyAIyfmd_5AtYzJdovcVzOZ4F555_fFHEN0",
+    authDomain: "admin-d8e2a.firebaseapp.com",
+    projectId: "admin-d8e2a",
+    storageBucket: "admin-d8e2a.appspot.com",
+    messagingSenderId: "521159802193",
+    appId: "1:521159802193:web:ff41c81b9033c620b56770"
+  };
+const app = initializeApp(firebaseConfig);
+const db1 = getFirestore();
+const docRef = doc(db1, "FlashCards", "Chapter1");
+const docSnap = await getDoc(docRef);
+if(docSnap.exists()) { 
+ const cardData = [
     {
-        question: "What is my name?",
-        answer: "Charan",
+        question: docSnap.data().Question1,
+        answer: docSnap.data().Answer1,
     },
     {
-        question: "What is Prem's name?",
-        answer: "Prem",
+        question: docSnap.data().Question2,
+        answer: docSnap.data().Answer2,
+    },
+    {
+        question: docSnap.data().Question3,
+        answer: docSnap.data().Answer3,
+    },
+    {
+        question: docSnap.data().Question4,
+        answer: docSnap.data().Answer4,
+    },
+    {
+        question: docSnap.data().Question5,
+        answer: docSnap.data().Answer5,
+    },
+    {
+        question: docSnap.data().Question6,
+        answer: docSnap.data().Answer6,
+    },
+    {
+        question: docSnap.data().Question7,
+        answer: docSnap.data().Answer7,
     },
 ];
 
@@ -40,3 +75,7 @@ previous_btn.addEventListener("click", () => {
         loadCard()
     }
 })
+}
+else {
+    console.log("No data available");
+}

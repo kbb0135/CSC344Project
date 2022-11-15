@@ -22,7 +22,7 @@ const firebaseConfig = {
     messagingSenderId: "521159802193",
     appId: "1:521159802193:web:ff41c81b9033c620b56770"
   };
-export var temp2;
+var temp2;
 
 const app = initializeApp(firebaseConfig);
 //const database = getDatabase(app);

@@ -13,7 +13,6 @@ import {getFirestore,doc,collection,getDoc,setDoc,addDoc} from "https://www.gsta
 //     messagingSenderId: "1052775979865",
 //     appId: "1:1052775979865:web:b8de5ba5d832e93b18ca48"
 //   };
-
 const firebaseConfig = {
     apiKey: "AIzaSyAIyfmd_5AtYzJdovcVzOZ4F555_fFHEN0",
     authDomain: "admin-d8e2a.firebaseapp.com",
@@ -29,7 +28,7 @@ const app = initializeApp(firebaseConfig);
 //const dbRef = ref(getDatabase());
 //const auth = getAuth();
 const db1 = getFirestore();
-const docRef = doc(db1, "Quizes", "Quiz2");
+const docRef = doc(db1, "Quizes", "Quiz3");
 const docSnap = await getDoc(docRef);
 if(docSnap.exists()) {
 var quizData = [

@@ -138,14 +138,3 @@ ul li {
  }
  .dropdown a:hover {background-color: #ddd;}
  .show {display: block;}
-
- /* ul.dropdown li {
-    position: relative;
-
-    static
-    relative
-    fixed
-    absolute
-    sticky
-
- } */

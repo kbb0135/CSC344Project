@@ -65,7 +65,7 @@ const pageNum = document.getElementById('page')
 
 
 let currentCard = 0
-
+let x;
 loadCard()
 
 function loadCard() {
@@ -74,6 +74,7 @@ function loadCard() {
     pageNum.innerText = currentCardData.page
 
     card_question.innerText = currentCardData.question
+    x=currentCardData.question;
     card_answer.innerText = currentCardData.answer
 }
 
@@ -93,12 +94,12 @@ previous_btn.addEventListener("click", () => {
     }
 })
 
-console.log("test1")
-
+console.log("test2")
+console.log(x)
 document.getElementById('speak').addEventListener("click", () => {
     function textToAudio() {
         // let msg = document.getElementById(card_question).value;
-        let msg = card_question.value;
+        let msg = x;
         console.log("msg")
         
         let speech = new SpeechSynthesisUtterance();
@@ -106,9 +107,10 @@ document.getElementById('speak').addEventListener("click", () => {
         
         speech.text = msg;
         speech.volume = 1;
-        speech.rate = 1;
+        speech.rate = 0.85;
         speech.pitch = 1;
         
         window.speechSynthesis.speak(speech);
     }
+    textToAudio();
 })

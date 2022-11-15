@@ -38,47 +38,7 @@
             <a class="nav-link active" aria-current="page" href="sign.html">Register</a>
           </li>
         </ul>
-        <div class="dropdown">
-          <button class="dropbtn" onclick="showDropList()">Search</button>
-          <div id="myDropdown" class="dropdownList">
-            <input type="text" placeholder="Search.." class="searchField">
-            <a href="chapter1.html">Chapter 1</a>
-            <a href="chapter2.html">Chapter 2</a>
-            <a href="chapter3.html">Chapter 3</a>
-            <a href="chapter4.html">Chapter 4</a>
-            <a href="chapter5.html">Chapter 5</a>
-            <a href="quiz1.html">Quiz 1</a>
-            <a href="default_flashcard.html">Flashcard</a>
-            <a href="flashcard.html">Flashcard (Custom) </a>
-            <a href="progressbar.html">Progress Report</a>
-          </div>
-        </div>
-        <script>
-          function showDropList() {
-            let dropDiv = document.querySelector('.dropdownList');
-            if (dropDiv.style.display === "block") {
-              dropDiv.style.display = "";
-            } else {
-              dropDiv.style.display = "block";
-            }
-          }
-          document.querySelector('.searchField').addEventListener('keyup', filterDropdown);
-          function filterDropdown() {
-            var inputSearch, filterText, ul, li, links, i, div;
-            inputSearch = document.querySelector(".searchField");
-            filterText = inputSearch.value.toUpperCase();
-            div = document.getElementById("myDropdown");
-            links = div.getElementsByTagName("a");
-            for (i = 0; i < links.length; i++) {
-              txtValue = links[i].textContent || links[i].innerText;
-              if (txtValue.toUpperCase().indexOf(filterText) > -1) {
-                links[i].style.display = "";
-              } else {
-                links[i].style.display = "none";
-              }
-            }
-          }
-        </script>
+        
       </div>
     </div>
   </nav>

@@ -74,7 +74,7 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="progressbar.html">Progress Report</a>
                     </li>
-                
+
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="sign.html">Register</a>
                     </li>
@@ -98,44 +98,44 @@
                 <div class="dropdown">
                     <button class="dropbtn" onclick="showDropList()">Search</button>
                     <div id="myDropdown" class="dropdownList">
-                      <input type="text" placeholder="Search.." class="searchField">
-                      <a href="chapter1.html">Chapter 1</a>
-                      <a href="chapter2.html">Chapter 2</a>
-                      <a href="chapter3.html">Chapter 3</a>
-                      <a href="chapter4.html">Chapter 4</a>
-                      <a href="chapter5.html">Chapter 5</a>
-                      <a href="quiz1.html">Quiz 1</a>
-                      <a href="default_flashcard.html">Flashcard</a>
-                      <a href="flashcard.html">Flashcard (Custom) </a>
-                      <a href="progressbar.html">Progress Report</a>
+                        <input type="text" placeholder="Search.." class="searchField">
+                        <a href="chapter1.html">Chapter 1</a>
+                        <a href="chapter2.html">Chapter 2</a>
+                        <a href="chapter3.html">Chapter 3</a>
+                        <a href="chapter4.html">Chapter 4</a>
+                        <a href="chapter5.html">Chapter 5</a>
+                        <a href="quiz1.html">Quiz 1</a>
+                        <a href="default_flashcard.html">Flashcard</a>
+                        <a href="flashcard.html">Flashcard (Custom) </a>
+                        <a href="progressbar.html">Progress Report</a>
                     </div>
-                  </div>
-                  <script>
+                </div>
+                <script>
                     function showDropList() {
-                      let dropDiv = document.querySelector('.dropdownList');
-                      if (dropDiv.style.display === "block") {
-                        dropDiv.style.display = "";
-                      } else {
-                        dropDiv.style.display = "block";
-                      }
+                        let dropDiv = document.querySelector('.dropdownList');
+                        if (dropDiv.style.display === "block") {
+                            dropDiv.style.display = "";
+                        } else {
+                            dropDiv.style.display = "block";
+                        }
                     }
                     document.querySelector('.searchField').addEventListener('keyup', filterDropdown);
                     function filterDropdown() {
-                      var inputSearch, filterText, ul, li, links, i, div;
-                      inputSearch = document.querySelector(".searchField");
-                      filterText = inputSearch.value.toUpperCase();
-                      div = document.getElementById("myDropdown");
-                      links = div.getElementsByTagName("a");
-                      for (i = 0; i < links.length; i++) {
-                        txtValue = links[i].textContent || links[i].innerText;
-                        if (txtValue.toUpperCase().indexOf(filterText) > -1) {
-                          links[i].style.display = "";
-                        } else {
-                          links[i].style.display = "none";
+                        var inputSearch, filterText, ul, li, links, i, div;
+                        inputSearch = document.querySelector(".searchField");
+                        filterText = inputSearch.value.toUpperCase();
+                        div = document.getElementById("myDropdown");
+                        links = div.getElementsByTagName("a");
+                        for (i = 0; i < links.length; i++) {
+                            txtValue = links[i].textContent || links[i].innerText;
+                            if (txtValue.toUpperCase().indexOf(filterText) > -1) {
+                                links[i].style.display = "";
+                            } else {
+                                links[i].style.display = "none";
+                            }
                         }
-                      }
                     }
-                  </script>
+                </script>
             </div>
         </div>
     </nav>
@@ -145,7 +145,8 @@
         <h2> Introduction to HTML Styles and Images.</h2>
         <li>The HTMl style uses CSS property and the value is a CSS value.</li>
         <li>The CSS background-color property defines the background color for an HTML element.</li>
-        <li>Style atrribute uses background-color for background color, ,font-family for text fonts,uses font-size for text sizes,and
+        <li>Style atrribute uses background-color for background color, ,font-family for text fonts,uses font-size for
+            text sizes,and
             uses text-align for text alignment.</li>
 
         <div class="blog_1 my-5">
@@ -171,15 +172,14 @@
                     <div
                         class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                         <div class="col p-4 d-flex flex-column position-static">
-                            <strong class="d-inline-block mb-2 text-success">Web-Design</strong>
+                            <strong class="d-inline-block mb-2 ">Web-Design</strong>
                             <h3 class="mb-0">Helpful Video</h3>
-                            <div class="mb-1 text-muted">Nov 11</div>
                             <p class="mb-auto">This is a wider card with supporting text below as a natural lead-in to
                                 additional content.</p>
-                            <a href="https://www.youtube.com/embed/rOPKC49gTkk" class="stretched-link">Watch Video</a>
+                            <a href="https://www.youtube.com/embed/rOPKC49gTkk" class="stretched-link text-success.">Watch Video</a>
                         </div>
                         <div class="col-auto d-none d-lg-block">
-                            <iframe width="440" height="395" src="https://www.youtube.com/embed/rOPKC49gTkk"
+                            <iframe width="560" height="388" src="https://www.youtube.com/embed/Ts6FFV2mmXI"
                                 title="YouTube video player" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 allowfullscreen></iframe>
@@ -194,13 +194,14 @@
             <div class="uses">
                 <h2> Uses of basic HTML images and styles:</h2>
                 <li>The HTML "img" tag is used to embed an image in a web page.</li>
-                <li>HTML uses the width and height attributes or the CSS width and height properties to define the size of an image.</li>
+                <li>HTML uses the width and height attributes or the CSS width and height properties to define the size
+                    of an image.</li>
                 <li>To use an image as a link, put the "img" tag inside the "a"tag.</li>
                 <li>HTML also uses the CSS property to let the image float to the right or to the left of a text.</li>
                 <li>The required "alt" attribute provides an alternate text or caption for an image.</li>
                 <li>The width and height attributes always define the width and height of the image in pixels.</li>
                 <li>The "src" specifies the path to the image.</li>
-                
+
             </div>
 
             <div class="w3-clear nextprev">
@@ -211,15 +212,15 @@
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
                 integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
                 crossorigin="anonymous"></script>
-                <script src="app.js"></script>
-                <!-- JS CDN -->
-                <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
-                <script>
-                    function addDarkmodeWidget() {
-                        new Darkmode().showWidget();
-                    }
-                    window.addEventListener('load', addDarkmodeWidget);
-                </script>
+            <script src="app.js"></script>
+            <!-- JS CDN -->
+            <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+            <script>
+                function addDarkmodeWidget() {
+                    new Darkmode().showWidget();
+                }
+                window.addEventListener('load', addDarkmodeWidget);
+            </script>
 </body>
 <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js";

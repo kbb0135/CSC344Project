@@ -159,7 +159,7 @@ submit_button.addEventListener('click', () => {
     if(answer) {
        if(answer === quizData[currentQuiz].correct) {
            score++
-           localStorage.setItem("sc", score);
+           localStorage.setItem("sc5", score);
            
            
        }
@@ -183,7 +183,7 @@ submit_button.addEventListener('click', () => {
     }
 })
 }
-temp=localStorage.getItem("sc");
+temp=localStorage.getItem("sc5");
 console.log("temp="+temp);
 // console.log(quiz[0]);
 // onAuthStateChanged(auth, (user) => {

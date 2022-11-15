@@ -152,6 +152,7 @@ function getSelected() {
     answerEls.forEach(answerEl => {
         if(answerEl.checked) {
             answer = answerEl.id
+            
         }
     })
     return answer

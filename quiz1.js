@@ -49,11 +49,11 @@ const quizData = [
     },
     {
         page: "4/4",
-        question: "What is used to create space around the elements content?",
-        a: "Margin",
-        b: "Padding",
-        c: "Display",
-        d: "align-text",
+        question: "What does the li tag do?",
+        a: "Creates an ordered list",
+        b: "Defines a list item",
+        c: "Makes the font little",
+        d: "Creates a link",
         correct: "b",
     },
 ];
@@ -67,6 +67,9 @@ const c_text = document.getElementById('c_text')
 const d_text = document.getElementById('d_text')
 const submit_button = document.getElementById('submit')
 const home_button = document.getElementById('home')
+
+// const previous_btn = document.getElementById('previous')
+
 let currentQuiz = 0
 let score = 0
 const wrongANS = []
@@ -140,9 +143,11 @@ function getSelected() {
     })
     return answer
 }
+const temp="c"
 submit_button.addEventListener('click', () => {
     //alert("test 123")
     const answer = getSelected()
+
     if(answer) {
        if(answer === quizData[currentQuiz].correct) {
            score++
@@ -193,3 +198,11 @@ onAuthStateChanged(auth, (user) => {
         
 }
 })
+
+// previous_btn.addEventListener("click", () => {
+//     currentCard--;
+
+//     if(currentCard < cardData.length) {
+//         loadCard()
+//     }
+// })

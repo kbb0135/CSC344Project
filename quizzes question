@@ -1,0 +1,113 @@
+Chapter 1
+-> what does the li tag do?
+* Defines a list item 
+- Creates an ordered list
+- Makes the font little
+- Creates a link
+
+
+Chapter 2
+-> What is the HTML class attribute used for?
+- To specify a class for an HTML element
+- To point to a class name in a style sheet
+- To makes changes to HTML elements using JavaScript
+* All of the above
+
+-> How many elements can have the same id?
+* One
+- 0
+- 5
+- 100
+
+-> What symbol is used before the id attribute in CSS?
+* #
+- .
+- <>
+- _
+
+-> Where can the id tag be used?
+- Inside the <div> tag
+- Inside the <h1> tag
+- Inside the <p> tag
+* All of the above
+
+-> The # symbol is used after the id is defined in CSS. True or false?
+- False
+* True
+
+Chapter 3
+-> What is used to define the background color?
+* background-color
+- color
+- color-change
+- All of the above
+
+-> What is used to to move a text to the middle?
+* text-align: center;
+- text-align: middle
+- move-text: middle
+- align-text: center
+
+-> Which tag specifies the path to an image?
+* src
+- path
+- li
+- link
+
+-> What is used to define the size of an image?
+* height and width
+- paddimg
+- margin
+- size
+
+chapter 4
+-> What language is commonly alongside with HTML? 
+* JavaScript
+- Java
+- c++
+- python
+
+-> Which element returns the element that matches with the HTML ID?
+* getElementByid()
+- getID()
+- returnID()
+- none of the above
+
+-> What is used to embed or refer to a JavaScript code?
+* script
+- refer
+- use(javascript)
+- embed
+
+-> Which is an object that has properties & methods to call on it?
+* document
+- script
+- page
+- class
+
+chapter 5
+-> Which of these elements is a container for different types of input elements such as: text fields and submit button?
+* form
+- container
+- button
+- label
+
+-> What does the "action" attribute do?
+* defines the action to be performed when the form is submitted
+- defines a link to a different page
+- creates a document page
+- All of the above
+
+-> Which attribute is used to specify the max number of characters a user can enter in a text box?
+* maxlength
+- size
+- charLength
+- textSize
+
+-> What does the type attribute do?
+* indicate the type of input control
+- defines the type of variable to be used
+- indicates what type of character it is
+- none of the above
+
+

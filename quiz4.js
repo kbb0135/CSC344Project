@@ -21,7 +21,7 @@ const firebaseConfig = {
     messagingSenderId: "521159802193",
     appId: "1:521159802193:web:ff41c81b9033c620b56770"
   };
-//export var temp;
+export var temp4;
 
 const app = initializeApp(firebaseConfig);
 //const database = getDatabase(app);
@@ -183,8 +183,8 @@ submit_button.addEventListener('click', () => {
     }
 })
 }
-temp=localStorage.getItem("sc4");
-console.log("temp="+temp);
+temp4=localStorage.getItem("sc4");
+console.log("temp="+temp4);
 // console.log(quiz[0]);
 // onAuthStateChanged(auth, (user) => {
 //     // const user = userCredential.user;

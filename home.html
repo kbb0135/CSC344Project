@@ -286,8 +286,10 @@
   const database = getDatabase(app);
   const dbRef = ref(getDatabase());
   const auth = getAuth();
+ // console.log(userCredential.user)
+ console.log(sessionStorage.getItem('userName'))
+ 
   onAuthStateChanged(auth, (user) => {
-
     if (user) {
       // User is signed in, see docs for a list of available properties
       // https://firebase.google.com/docs/reference/js/firebase.User
@@ -299,7 +301,10 @@
 
       get(child(dbRef, `users/${uid}`)).then((snapshot) => {
         if (snapshot.exists()) {
-          console.log(snapshot.val());
+          //console.log(snapshot.val());
+          name = snapshot.val().firstname;
+          sessionStorage.setItem('userName',snapshot.val().firstname);
+          
         } else {
           console.log("No data available");
         }
@@ -312,15 +317,21 @@
         window.location = "userPreferences.html"
       });
 
-      document.getElementById('logout').addEventListener('click', function () {
+      document.getElementById('logout').addEventListener('click', function ( e ) {
         signOut(auth).then(() => {
           //alert(user.firstname);
           var currentUser = JSON.parse(sessionStorage.getItem('user'));
-
-          sessionStorage.removeItem('user');
-          alert("Sign-out successful");
-
-          window.location = "login.html";
+          if( ! confirm("Are you sure want to logout?") ){
+            e.preventDefault(); // ! => don't want to do this
+          } 
+          else {
+            //want to do this! => maybe do something about it?
+            sessionStorage.removeItem('user');
+            alert("Sign-out successful");
+            window.location = "login.html";
+          // alert('Ok, lets do this!');
+          }
+          
         }).catch((error) => {
           alert("Something Went wrong");
         });
@@ -336,6 +347,7 @@
       })
     }
   });
+  
 
 
 </script>

@@ -27,7 +27,7 @@
 
           <!--Home Feature-->
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+            <a id="guestMode" class="nav-link active" aria-current="page" href="home.html">Guest Mode</a>
           </li>
 
           <li class="nav-item">
@@ -160,6 +160,13 @@
       window.addEventListener('load', addDarkmodeWidget);
     </script>
     <script src="./app.js"></script>
+    <script>
+      document.getElementById("guestMode").addEventListener('click',function() {
+        var name = "Guest";
+        sessionStorage.setItem('userName', name);
+       // window.location = "home.html";
+      })
+    </script>
 
 </body>
 </body>

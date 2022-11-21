@@ -65,7 +65,7 @@
 
     </div>
 
-    <a href="home.html" class="back">Back to Home</a>
+    <!-- <a href="home.html" class="back">Back to Home</a> -->
 
     <script type = module src="quiz1.js"></script>
 
@@ -80,7 +80,7 @@
 
 </body>
 <script type = "module">
-    import {temp} from '/quiz1.js';
+    import {temp} from "./quiz1.js";
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js";
     import { getDatabase,set, ref,update, child, get,push} from "https://www.gstatic.com/firebasejs/9.13.0/firebase-database.js";
     import { getAuth, signInWithEmailAndPassword,onAuthStateChanged, signOut} from "https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js";

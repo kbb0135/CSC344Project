@@ -74,7 +74,7 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="progressbar.html">Progress Report</a>
                     </li>
-                
+
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="sign.html">Register</a>
                     </li>
@@ -98,44 +98,44 @@
                 <div class="dropdown">
                     <button class="dropbtn" onclick="showDropList()">Search</button>
                     <div id="myDropdown" class="dropdownList">
-                      <input type="text" placeholder="Search.." class="searchField">
-                      <a href="chapter1.html">Chapter 1</a>
-                      <a href="chapter2.html">Chapter 2</a>
-                      <a href="chapter3.html">Chapter 3</a>
-                      <a href="chapter4.html">Chapter 4</a>
-                      <a href="chapter5.html">Chapter 5</a>
-                      <a href="quiz1.html">Quiz 1</a>
-                      <a href="default_flashcard.html">Flashcard</a>
-                      <a href="flashcard.html">Flashcard (Custom) </a>
-                      <a href="progressbar.html">Progress Report</a>
+                        <input type="text" placeholder="Search.." class="searchField">
+                        <a href="chapter1.html">Chapter 1</a>
+                        <a href="chapter2.html">Chapter 2</a>
+                        <a href="chapter3.html">Chapter 3</a>
+                        <a href="chapter4.html">Chapter 4</a>
+                        <a href="chapter5.html">Chapter 5</a>
+                        <a href="quiz1.html">Quiz 1</a>
+                        <a href="default_flashcard.html">Flashcard</a>
+                        <a href="flashcard.html">Flashcard (Custom) </a>
+                        <a href="progressbar.html">Progress Report</a>
                     </div>
-                  </div>
-                  <script>
+                </div>
+                <script>
                     function showDropList() {
-                      let dropDiv = document.querySelector('.dropdownList');
-                      if (dropDiv.style.display === "block") {
-                        dropDiv.style.display = "";
-                      } else {
-                        dropDiv.style.display = "block";
-                      }
+                        let dropDiv = document.querySelector('.dropdownList');
+                        if (dropDiv.style.display === "block") {
+                            dropDiv.style.display = "";
+                        } else {
+                            dropDiv.style.display = "block";
+                        }
                     }
                     document.querySelector('.searchField').addEventListener('keyup', filterDropdown);
                     function filterDropdown() {
-                      var inputSearch, filterText, ul, li, links, i, div;
-                      inputSearch = document.querySelector(".searchField");
-                      filterText = inputSearch.value.toUpperCase();
-                      div = document.getElementById("myDropdown");
-                      links = div.getElementsByTagName("a");
-                      for (i = 0; i < links.length; i++) {
-                        txtValue = links[i].textContent || links[i].innerText;
-                        if (txtValue.toUpperCase().indexOf(filterText) > -1) {
-                          links[i].style.display = "";
-                        } else {
-                          links[i].style.display = "none";
+                        var inputSearch, filterText, ul, li, links, i, div;
+                        inputSearch = document.querySelector(".searchField");
+                        filterText = inputSearch.value.toUpperCase();
+                        div = document.getElementById("myDropdown");
+                        links = div.getElementsByTagName("a");
+                        for (i = 0; i < links.length; i++) {
+                            txtValue = links[i].textContent || links[i].innerText;
+                            if (txtValue.toUpperCase().indexOf(filterText) > -1) {
+                                links[i].style.display = "";
+                            } else {
+                                links[i].style.display = "none";
+                            }
                         }
-                      }
                     }
-                  </script>
+                </script>
             </div>
         </div>
     </nav>
@@ -143,7 +143,8 @@
         <h1>Chapter Five</h1>
         <h2> Introduction to HTML Forms and Attributes</h2>
         <li>An HTML form is used to collect user input.</li>
-        <li>The "form" element is a container for different types of input elements such as: text fields, checkboxes, radio buttons, submit buttons, etc.</li>
+        <li>The "form" element is a container for different types of input elements such as: text fields, checkboxes,
+            radio buttons, submit buttons, etc.</li>
         <li>The "action" attribute in form defines the action to be performed when the form is submitted.</li>
 
         <div class="blog_1 my-5">
@@ -152,12 +153,11 @@
                     <div
                         class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                         <div class="col p-4 d-flex flex-column position-static">
-                            <strong class="d-inline-block mb-2 text-primary">A sample HTML Document.</strong>
-                            <h3 class="mb-0">Featured post</h3>
-                            <div class="mb-1 text-muted">Nov 12</div>
-                            <p class="card-text mb-auto">This is a wider card with supporting text below as a natural
-                                lead-in to additional content.</p>
-                            <a href="images/forms.jpg" class="stretched-link">View Image</a>
+                            <strong class="d-inline-block mb-2 text-success">A sample HTML Document with forms and attributes.</strong>
+                            <h3 class="mb-0"></h3>
+                            <div class="mb-1 text-muted"></div>
+                            <p class="card-text mb-auto"></p>
+                            <a href="images/forms.jpg" class="stretched-link text-success">View Image</a>
                         </div>
                         <div class="col-auto d-none d-lg-block">
                             <img class="bd-placeholder-img" width="420" height="390" src="images/forms.jpg" alt="">
@@ -169,15 +169,14 @@
                     <div
                         class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                         <div class="col p-4 d-flex flex-column position-static">
-                            <strong class="d-inline-block mb-2 text-success">Web-Design</strong>
-                            <h3 class="mb-0">Helpful Video</h3>
-                            <div class="mb-1 text-muted">Nov 11</div>
-                            <p class="mb-auto">This is a wider card with supporting text below as a natural lead-in to
-                                additional content.</p>
-                            <a href="https://www.youtube.com/embed/rOPKC49gTkk" class="stretched-link">Watch Video</a>
+                            <strong class="d-inline-block mb-2 text-success">Helpful video</strong>
+                            <h3 class="mb-0"></h3>
+                            <div class="mb-1 text-muted"></div>
+                            <p class="mb-auto"></p>
+                            <a href="https://www.youtube.com/embed/rOPKC49gTkk" class="stretched-link text-success">Watch Video</a>
                         </div>
                         <div class="col-auto d-none d-lg-block">
-                            <iframe width="440" height="395" src="https://www.youtube.com/embed/rOPKC49gTkk"
+                            <iframe width="560" height="386" src="https://www.youtube.com/embed/vj78j_Sy3uM"
                                 title="YouTube video player" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 allowfullscreen></iframe>
@@ -192,31 +191,34 @@
             <div class="uses">
                 <h2> Uses of basic HTML forms and attributes:</h2>
                 <li>The "action" scripts prepares or makes ready to process the passed data.</li>
-                <li>There are different types of form controls that can be used to collect data such as: Text Input Controls, Select Box Controls, Clickable Buttons, and Submit/Reset Buttons.</li>
+                <li>There are different types of form controls that can be used to collect data such as: Text Input
+                    Controls, Select Box Controls, Clickable Buttons, and Submit/Reset Buttons.</li>
                 <li>The "type" attribute indicates the type of input control.</li>
-                <li>The "name" attribute is used to give a name to the contol which is sent to the server to be recognized.</li>
+                <li>The "name" attribute is used to give a name to the contol which is sent to the server to be
+                    recognized.</li>
                 <li>The "size" allows to specify the width of the text-input control in terms of characters.</li>
-                <li>The "maxlength" attribute allows to specify the maximum numbers of characters a user can enter in a text box.</li>
-                
+                <li>The "maxlength" attribute allows to specify the maximum numbers of characters a user can enter in a
+                    text box.</li>
+
             </div>
 
             <div class="w3-clear nextprev">
                 <a class="w3-left ws-btn" href="chapter4.html">❮ Previous</a>
-              
+
             </div>
 
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
                 integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
                 crossorigin="anonymous"></script>
-                <script src="app.js"></script>
-                <!-- JS CDN -->
-                <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
-                <script>
-                    function addDarkmodeWidget() {
-                        new Darkmode().showWidget();
-                    }
-                    window.addEventListener('load', addDarkmodeWidget);
-                </script>
+            <script src="app.js"></script>
+            <!-- JS CDN -->
+            <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+            <script>
+                function addDarkmodeWidget() {
+                    new Darkmode().showWidget();
+                }
+                window.addEventListener('load', addDarkmodeWidget);
+            </script>
 </body>
 <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js";

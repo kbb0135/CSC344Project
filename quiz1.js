@@ -121,7 +121,7 @@ function loadQuiz() {
     var count = 300000;
     var interval = setInterval(function(){
     console.log("test...............")
-    count=document.getElementById('count').innerText;
+    count=document.getElementById('count')?.innerText;
     count--;
     if (count === 0){
         ``
@@ -181,8 +181,9 @@ submit_button.addEventListener('click', () => {
         
            quiz.innerHTML = `
            <h2>You answered ${score}/${quizData.length} questions correctly</h2>
-            <button onclick="location.reload()">Retake Quiz</button>
-            <button onclick="window.location.assign(home.html)> Home </button>
+            <button onclick='location.reload()'>Retake Quiz</button>
+            <button onclick=window.location.assign('home.html')> Home </button>
+            <button onclick=window.location.assign('quiz1Response.html')> See correct answers </button>
            ` 
        }
        

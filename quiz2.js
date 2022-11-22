@@ -22,7 +22,7 @@ const firebaseConfig = {
     messagingSenderId: "521159802193",
     appId: "1:521159802193:web:ff41c81b9033c620b56770"
   };
-var temp2;
+export var temp2;
 
 const app = initializeApp(firebaseConfig);
 //const database = getDatabase(app);
@@ -176,8 +176,9 @@ submit_button.addEventListener('click', () => {
         
            quiz.innerHTML = `
            <h2>You answered ${score}/${quizData.length} questions correctly</h2>
-            <button onclick="location.reload()">Retake Quiz</button>
-            <button onclick="window.location.assign(home.html)> Home </button>
+           <button onclick='location.reload()'>Retake Quiz</button>
+           <button onclick=window.location.assign('home.html')> Home </button>
+           <button onclick=window.location.assign('quizResponse2.html')> See correct answers </button>
            ` 
        }
        

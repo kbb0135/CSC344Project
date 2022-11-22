@@ -76,11 +76,10 @@
 		integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
 		crossorigin="anonymous"></script> -->
 
-    
 
 </body>
 <script type = "module">
-    import {temp2} from '/quiz2.js';
+    import {temp2} from "./quiz2.js";
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js";
     import { getDatabase,set, ref,update, child, get,push} from "https://www.gstatic.com/firebasejs/9.13.0/firebase-database.js";
     import { getAuth, signInWithEmailAndPassword,onAuthStateChanged, signOut} from "https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js";
@@ -98,6 +97,7 @@
     const database = getDatabase(app);
     const dbRef = ref(getDatabase());
     const auth = getAuth();
+    let val = localStorage.getItem("sc3");
     //console.log("score="+temp2);
     onAuthStateChanged(auth, (user) => {
         // const user = userCredential.user;
@@ -105,6 +105,7 @@
             var b = document.getElementById('b').value;
             var c = document.getElementById('c').value;
             var d = document.getElementById('d').value;
+            localStorage.getItem("scr2");
            // var submit = document.getElementById('submit').value;
         //const uid = user.uid;
         if(user) {

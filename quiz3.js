@@ -175,8 +175,9 @@ submit_button.addEventListener('click', () => {
         
            quiz.innerHTML = `
            <h2>You answered ${score}/${quizData.length} questions correctly</h2>
-            <button onclick="location.reload()">Retake Quiz</button>
-            <button onclick="window.location.assign(home.html)> Home </button>
+           <button onclick='location.reload()'>Retake Quiz</button>
+           <button onclick=window.location.assign('home.html')> Home </button>
+           <button onclick=window.location.assign('quizResponse3.html')> See correct answers </button>
            ` 
        }
        

@@ -34,8 +34,8 @@ if(docSnap.exists()) {
     document.getElementById("q2").innerHTML = docSnap.data().question2
     document.getElementById("q3").innerHTML = docSnap.data().question3
     document.getElementById("q4").innerHTML = docSnap.data().question4
-    document.getElementById("a1").innerHTML = docSnap.data().a
-    document.getElementById("a2").innerHTML = docSnap.data().h
-    document.getElementById("a3").innerHTML = docSnap.data().j
-    document.getElementById("a4").innerHTML = docSnap.data().n
+    document.getElementById("a1").innerHTML = docSnap.data().d
+    document.getElementById("a2").innerHTML = docSnap.data().e
+    document.getElementById("a3").innerHTML = docSnap.data().k
+    document.getElementById("a4").innerHTML = docSnap.data().p
 }

@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CodeHTML</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 
   <link rel="stylesheet" href="chapter1.css">
-
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
 
 <body>
@@ -74,13 +73,6 @@
                     <a class="nav-link active" aria-current="page" href="progressbar.html">Progress Report</a>
                 </li>
             
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="sign.html">Register</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="login.html">LogIn</a>
-                </li>
                 <!--Settings-->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -218,8 +210,10 @@
           <div class="col p-4 d-flex flex-column position-static">
             <strong class="d-inline-block mb-2 text-primary text-success">Learn HTML</strong>
             <h5 class="mb-0 text-primary text-success">Master with our Guidance</h5>
-            <p class="card-text mb-auto text-success" >Our goal is to help you succeed in learning the basics of HTML.Motivating and guiding you in the right path towards success.</p>
-            <a href="images/card1.jpg" class="stretched-link" >View Image</a>
+            <p class="card-text mb-auto text-success" >Our goal is to help you succeed in learning the basics of HTML.Motivating and guiding you in the right path towards success is our main objective. With us you are able to study chapters about the basics of HTML,create engaging flashcards, take quizzes,
+              and be able to grasp great understanding regarding the concepts of HTML. We are always here to help you.
+            </p>
+            <a href="images/card1.jpg" class="stretched-link text-success" >View Image</a>
           </div>
           <div class="col-auto d-none d-lg-block">
             <img class="bd-placeholder-img" width="360" height="390" src="images/card1.jpg" alt="">
@@ -233,8 +227,9 @@
             <strong class="d-inline-block mb-2 text-success" >Web-Design</strong>
             <h3 class="mb-0 text-success" > Dictate the Future</h3>
             <p class="mb-auto text-success">With our online learning platform, you can watch videos,chapters,and study with
-              flashcards.</p>
-            <a href="images/pic1.svg" class="stretched-link">View Image</a>
+              flashcards. We provide tools and opportunities for you to learn about basic HTML, styling and basic understanding of how to program a responsive functional
+            website. If you join our platform there is always a guarantee of success with online friendly environment.</p>
+            <a href="images/pic1.svg" class="stretched-link text-success">View Image</a>
           </div>
           <div class="col-auto d-none d-lg-block">
             <img class="bd-placeholder-img" width="360" height="390" src="images/pic1.svg" alt="">
@@ -284,8 +279,10 @@
   const database = getDatabase(app);
   const dbRef = ref(getDatabase());
   const auth = getAuth();
+ // console.log(userCredential.user)
+ console.log(sessionStorage.getItem('userName'))
+ 
   onAuthStateChanged(auth, (user) => {
-
     if (user) {
       // User is signed in, see docs for a list of available properties
       // https://firebase.google.com/docs/reference/js/firebase.User
@@ -297,7 +294,10 @@
 
       get(child(dbRef, `users/${uid}`)).then((snapshot) => {
         if (snapshot.exists()) {
-          console.log(snapshot.val());
+          //console.log(snapshot.val());
+          name = snapshot.val().firstname;
+          sessionStorage.setItem('userName',snapshot.val().firstname);
+          
         } else {
           console.log("No data available");
         }
@@ -310,15 +310,21 @@
         window.location = "userPreferences.html"
       });
 
-      document.getElementById('logout').addEventListener('click', function () {
+      document.getElementById('logout').addEventListener('click', function ( e ) {
         signOut(auth).then(() => {
           //alert(user.firstname);
           var currentUser = JSON.parse(sessionStorage.getItem('user'));
-
-          sessionStorage.removeItem('user');
-          alert("Sign-out successful");
-
-          window.location = "login.html";
+          if( ! confirm("Are you sure want to logout?") ){
+            e.preventDefault(); // ! => don't want to do this
+          } 
+          else {
+            //want to do this! => maybe do something about it?
+            sessionStorage.removeItem('user');
+            alert("Sign-out successful");
+            window.location = "login.html";
+          // alert('Ok, lets do this!');
+          }
+          
         }).catch((error) => {
           alert("Something Went wrong");
         });
@@ -334,6 +340,7 @@
       })
     }
   });
+  
 
 
 </script>

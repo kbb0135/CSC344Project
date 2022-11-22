@@ -6,6 +6,8 @@ menu.addEventListener('click',function() {
     menuLinks.classList.toggle('active');
 });
 
+
+
 function myFunction() { 
     document.getElementById("DropDown").classList.toggle("show");
 }
@@ -110,3 +112,5 @@ function myFunction1() {
   
   const darkmode = new Darkmode(options);
   darkmode.showWidget();
+
+  

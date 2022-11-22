@@ -44,7 +44,7 @@
 <script type="module">
     // Import the functions you need from the SDKs you need
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js";
-    import { getDatabase,set, ref,update } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-database.js";
+    import { getDatabase,set,get,child, ref,update } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-database.js";
     import { getAuth, signInWithEmailAndPassword, signOut} from "https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js";
     // TODO: Add SDKs for Firebase products that you want to use
     // https://firebase.google.com/docs/web/setup#available-libraries
@@ -64,7 +64,8 @@
     const app = initializeApp(firebaseConfig);
     const database = getDatabase(app);
     const auth = getAuth();
-
+    const dbRef = ref(getDatabase());
+    //console.log(sessionStorage.getItem())
  //how to make table in html file
 
 
@@ -82,12 +83,24 @@
             update(ref(database, 'users/' + user.uid),{
                 last_login: dt,
             })
+            const uid = user.uid;
+            
+            get(child(dbRef, `users/${uid}`)).then((snapshot) => {
+        if (snapshot.exists()) {
+          sessionStorage.setItem('userName',snapshot.val().firstname);
+          
+        } else {
+          console.log("No data available");
+        }
+      }).catch((error) => {
+        console.error(error);
+      });
 
             alert('User loged in!');
-            sessionStorage.setItem('user', JSON.stringify(user));
+            //sessionStorage.setItem('userName', JSON.stringify(user));
             window.location = "home.html"
         // ...
-        })
+})
             .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;

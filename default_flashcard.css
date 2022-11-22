@@ -113,7 +113,7 @@ hr {
 }
 
 button {
-	padding: 1rem 4rem;
+	padding: 0.5rem 4rem;
   	outline: none;
   	cursor: pointer;
   	border: 1px solid lightgray;
@@ -137,5 +137,5 @@ h5{
 }
 
 .question-box {
-	padding: 5rem 2rem;
+	padding: 4rem 1rem;
 }

@@ -112,5 +112,4 @@ function myFunction1() {
   
   const darkmode = new Darkmode(options);
   darkmode.showWidget();
-
-  
+  console.log("Prem")

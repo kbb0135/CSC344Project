@@ -3,7 +3,6 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebas
 import { getDatabase,set, ref,update,get,child, onValue} from "https://www.gstatic.com/firebasejs/9.14.0/firebase-database.js";
 import { getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut} from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
 import { getFirestore,doc,collection,getDoc,setDoc,addDoc} from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
-
 let q1,q2,q3,q4,temp; //for questions
 // export {temp, temp1,temp2, temp3, temp4, temp5,
 //     temp6,temp7,temp8,temp9,temp10,temp11,temp12,
